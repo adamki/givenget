@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'sqlite3'
+  gem 'database_cleaner'
 end
 
 group :development do
