@@ -1,7 +1,8 @@
 class CartsController < ApplicationController
 
   def show
-    @cart = Item.all.sample(5)
+    qty = rand(1..9)
+    @cart = CartItem.all.sample(qty)
   end
 
 end
