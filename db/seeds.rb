@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-items = Item.create([{title: 'pencil', description: 'bulk pencils', price: 1020, image: 'https://pencil-outlet.com'},
+items = Item.create([{title: 'pencil', description: 'bulk pencils', price: 1020, image: 'http://globe-views.com/dcim/dreams/pencil/pencil-01.jpg'},
                      {title: 'haircut', description: 'the most stylish', price: 1599, image: 'https://haircuts.com'}])
