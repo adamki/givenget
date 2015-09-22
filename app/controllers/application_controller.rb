@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :dollar_string
 
+  def cart
+    Cart.new(session[:cart]).items || []
+  end
+  
   def dollar_string(cents)
     "$#{cents.to_s}".insert(-3, '.')
   end
