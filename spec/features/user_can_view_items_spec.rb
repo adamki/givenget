@@ -15,6 +15,7 @@ feature 'user can view an item' do
       item = Item.find_by(title: 'pencil')
       expect(current_path).to eq(item_path(item))
       expect(page).to have_content('bulk pencils')
+      save_and_open_page
       expect(page).to have_content('$10.20')
     end
 

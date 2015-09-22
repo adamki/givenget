@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def dollar_string(cents)
-    dollars = cents / 100
+    dollars = (cents.to_f / 100)
     number_to_currency(dollars)
   end
 end
