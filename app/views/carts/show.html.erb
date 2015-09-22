@@ -12,16 +12,23 @@
     <tr>
       <td><%= cart_item.title %></td>
       <td><%= cart_item.description %></td>
-      <td><%= cart_item.price %></td>
+      <td><%= dollar_string(cart_item.price) %></td>
       <td><%= cart_item.quantity %></td>
-      <td><%= cart_item.subtotal %></td>
+      <td><%= dollar_string(cart_item.subtotal) %></td>
     </tr>
+  <% end %>
+  <% if !(@cart.empty?) %>
+  <tr>
+    <td></td><td></td><td></td><td></td>
+    <td><%= dollar_string(cart_total(@cart)) %></td>
+  </tr>
   <% end %>
 </table>
 
 <% if @cart.empty? %>
   <%= 'You have no items in your cart' if @cart.empty? %>
 <% else %>
-  <h3>Total: <%= @total %></h3>
+  <!-- <h3>Total: <%= @total %></h3> -->
+  <h3>Total: <%= dollar_string(cart_total(@cart)) %></h3>
   <%= link_to "Checkout" %>
 <% end %>
