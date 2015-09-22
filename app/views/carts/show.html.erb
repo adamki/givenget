@@ -10,7 +10,13 @@
   </tr>
   <% @cart.each do |cart_item| %>
     <tr>
-      <td><%= cart_item.title %></td>
+      <td>
+        <a href="/items/<%=cart_item.id%>">
+          <div style="height:100%;width:100%">
+            <%= cart_item.title %>
+          </div>
+        </a>
+      </td>
       <td><%= cart_item.description %></td>
       <td><%= dollar_string(cart_item.price) %></td>
       <td><%= cart_item.quantity %></td>
