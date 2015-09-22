@@ -282,6 +282,10 @@ th {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.glyphicon-shopping-cart {
+  font-size: 200%;
+  color: white;
+}
 .glyphicon-asterisk:before {
   content: "\2a";
 }

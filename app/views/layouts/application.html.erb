@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
   <title><%= yield(:title) %></title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'bootstrap.min', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'shop-homepage', media: 'all', 'data-turbolinks-track' => true %>
@@ -46,6 +60,9 @@
                         <a href="#">Contact</a>
                     </li>
                 </ul>
+                  <div class='navbar-right'>
+                    <i class='material-icons' id="cart">shopping_cart</i>
+                </div>
             </div>
             <!-- /.navbar-collapse -->
         </div>
