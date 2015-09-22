@@ -1,3 +1,8 @@
 #cart {
 	color: MediumTurquoise;
+	margin-top: 13px;
+}
+
+.navbar-text {
+	font-size: 110%;
 }
