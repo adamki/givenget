@@ -1,11 +1,9 @@
-include ActionView::Helpers::NumberHelper
-
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :dollar_string, :cart, :cart_total
+  helper_method :cart, :cart_total
 
   def cart
     Cart.new(session[:cart]).items || []
@@ -16,8 +14,4 @@ class ApplicationController < ActionController::Base
     cart_items.reduce(0) { |acc, item| acc + item.price }
   end
 
-  def dollar_string(cents)
-    dollars = (cents.to_f / 100)
-    number_to_currency(dollars)
-  end
 end
