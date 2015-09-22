@@ -1,8 +1,18 @@
 #cart {
-	color: MediumTurquoise;
+	color:  #BED7C1;
 	margin-top: 13px;
 }
 
 .navbar-text {
 	font-size: 110%;
+}
+
+.give-text {
+	font-size: 200%;
+}
+
+#cart:hover {
+	color: #6FB893;
+	margin-top: 13px;
+	font-size: 200%;
 }
