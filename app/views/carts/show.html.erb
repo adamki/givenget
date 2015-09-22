@@ -18,4 +18,10 @@
     </tr>
   <% end %>
 </table>
-<%= 'You have no items in your cart' if @cart.empty? %>
+
+<% if @cart.empty? %>
+  <%= 'You have no items in your cart' if @cart.empty? %>
+<% else %>
+  <h3>Total: <%= @total %></h3>
+  <%= link_to "Checkout" %>
+<% end %>
