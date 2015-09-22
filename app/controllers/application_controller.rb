@@ -1,3 +1,5 @@
+include ActionView::Helpers::NumberHelper
+
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -15,6 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def dollar_string(cents)
-    "$#{cents.to_s}".insert(-3, '.')
+    dollars = cents / 100
+    number_to_currency(dollars)
   end
 end
