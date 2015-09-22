@@ -12,9 +12,9 @@
     <tr>
       <td><%= cart_item.title %></td>
       <td><%= cart_item.description %></td>
-      <td><%= cart_item.price %></td>
+      <td><%= dollar_string(cart_item.price) %></td>
       <td><%= cart_item.quantity %></td>
-      <td><%= cart_item.subtotal %></td>
+      <td><%= dollar_string(cart_item.subtotal) %></td>
     </tr>
   <% end %>
 </table>

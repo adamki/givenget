@@ -22,10 +22,6 @@ items = Item.create([{title: 'pencil', description: 'bulk pencils', price: 1020,
                      {title: 'broken fork', description: 'its only kinda broken', price: 2000, image: 'https://broken-fork.com'},
                      {title: 'crate', description: 'put some stuff in them', price: 1279, image: 'https://crates.com'}])
 
-cart_items = items.map do |item|
-  qty = rand(1..9)
-  CartItem.new(item, qty)
-end
 
 
 
