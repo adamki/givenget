@@ -14,8 +14,21 @@
  *= require_self
  */
 
+ body{
+    /*background-color: #BED7C1;  in scheme trying different */
+    background-color: #6FB893;
+ }
+
 .thumbnail-pic{
   width: 320px;
   height: 150px;
   background-color: red;
+}
+
+.cat-button {
+  background-color: #F4EDD6;
+}
+
+.caption {
+    background-color: #F4EDD6;
 }
