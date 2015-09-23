@@ -9,4 +9,9 @@ class CartsController < ApplicationController
     @cart = cart_items.sample(qty)
   end
 
+  def update
+  	@cart = CartItem.new(params[:item], params[:quantity])
+  	redirect_to '/items'
+  end
+
 end

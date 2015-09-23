@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
   resources :items, only:[:index, :show, :new]
+  resources :carts, only:[:show, :update]
   get '/cart', to: 'carts#show'
+  patch '/carts', to: 'carts#update'
   get '/give', to: 'give#index'
 
   #content routes - manually done b/c no singular/plural distinction
