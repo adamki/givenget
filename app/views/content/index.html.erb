@@ -1,0 +1,24 @@
+<h1>Content</h1>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Action</th>
+    <th>Payload</th>
+  </tr>
+  <% @content.each do |c| %>
+    <tr>
+      <td>
+        <a href="/content/<%=c.id%>">
+          <div id='link' style="height:100%;width:100%">
+            <%= c.name %>
+          </div>
+        </a>
+      </td>
+      <td>
+        <%= link_to("Edit", edit_content_path(c), class: "btn btn-primary") %>
+      </td>
+      <td><%= c.payload %></td>
+    </tr>
+  <% end %>
+</table>
