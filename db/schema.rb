@@ -28,6 +28,11 @@ ActiveRecord::Schema.define(version: 20150923031347) do
   add_index "categories_ideas_table", ["category_id"], name: "index_categories_ideas_table_on_category_id", using: :btree
   add_index "categories_ideas_table", ["item_id"], name: "index_categories_ideas_table_on_item_id", using: :btree
 
+  create_table "content", force: :cascade do |t|
+    t.text "name"
+    t.text "payload"
+  end
+
   create_table "items", force: :cascade do |t|
     t.string  "title"
     t.text    "description"

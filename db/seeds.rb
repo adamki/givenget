@@ -24,6 +24,13 @@ items = Item.create([{title: 'pencil', description: 'bulk pencils', price: 1020,
 
 categories = Category.create([{name: "Profit"}, {name: "Business"}, {name: "Education"}, {name: "Technology"}, {name: "Sporting goods"}, {name: "Travel"}, {name: "Home Furnishings"}, {name: "Small Business"}])
 
+content = Content.create([
+       {name: "Butter",
+        payload: "Aliquam feugiat, dui quis iaculis maximus, massa felis tincidunt sem, a imperdiet leo elit vitae urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc iaculis, ante eu pellentesque lacinia, nisl eros lobortis turpis, ut iaculis nibh magna nec ligula. Sed rutrum pulvinar tortor eget cursus. Integer euismod, quam vitae commodo porttitor, ligula lectus accumsan eros, a pretium nunc lectus in odio. Vivamus pellentesque dui mattis augue aliquam pellentesque. Donec egestas dolor mi, a rhoncus ex tempus et. Curabitur ornare nisl a dapibus porta. Morbi ac bibendum lorem, id egestas nunc."
+       },
+       {name: "Margerine",
+        payload: "Maecenas tincidunt, elit nec posuere ullamcorper, justo lectus hendrerit purus, ac venenatis enim ligula eu felis. Nulla facilisi. Integer blandit nibh massa, nec commodo felis venenatis ac. Etiam semper porttitor leo sed sollicitudin. Nulla sed tortor massa. Morbi at orci neque. Curabitur semper sodales pulvinar. Donec luctus pharetra dolor, non porttitor sem facilisis sit amet. Aenean eu lectus purus. Vestibulum luctus at urna id euismod. Donec nulla enim, malesuada ac fermentum in, bibendum sed libero. Proin mattis nec ipsum a condimentum. Nulla eu placerat neque. Sed ac ornare lectus. Phasellus tempor nisi sit amet sem maximus, ullamcorper finibus dolor euismod. Phasellus posuere et ex vel sodales."
+       }])
 
 
 
