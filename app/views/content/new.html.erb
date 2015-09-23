@@ -1,0 +1,16 @@
+
+<div class="continer row well col-sm-6">
+<h1>New Content</h1>
+<div class="col-sm-2">
+</div>
+<div class="container col-sm-6 well">
+<%= form_for(@content, url: content_submit_path) do |f| %>
+  <%= f.label :name, 'Unique name:' %><br>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :payload, "Payload:" %><br>
+  <%= f.text_area :payload %><br>
+
+  <%= f.submit 'Create content' %>
+<% end %>
+</div>
