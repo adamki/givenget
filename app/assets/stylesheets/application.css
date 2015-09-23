@@ -13,15 +13,10 @@
  *= require "bootstrap"
  *= require "theme"
  *= require "shop-homepage"
+ *= require "shop-item"
  *= require "overrides"
  *= require_self
  */
-
-
- body{
-    /*background-color: #BED7C1;  in scheme trying different */
-    background-color: #6FB893;
- }
 
 .thumbnail-pic{
   width: 320px;
@@ -32,10 +27,6 @@
 .cat-button {
   background-color: #F4EDD6;
 }
-
-.cat-button:hover {
-  background-color: red;
-  }
 
 .caption {
     background-color: #F4EDD6;

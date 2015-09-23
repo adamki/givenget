@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
   #content routes - manually done b/c no singular/plural distinction
   get '/content/new', to: 'content#new'
-  post '/content/submit', to: 'content#submit'
+  post '/content/submit', to: 'content#create'
+  patch '/content/submit', to: 'content#update'
   get '/content', to: 'content#index'
   get '/content/:id/edit', to: 'content#edit', as: 'edit_content'
-  delete '/content/:id', to: 'content#destroy'
+  delete '/content/:id', to: 'content#destroy', as: 'delete_content'
 end
