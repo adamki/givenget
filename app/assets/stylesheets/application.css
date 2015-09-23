@@ -18,12 +18,6 @@
  *= require_self
  */
 
-
- body{
-    /*background-color: #BED7C1;  in scheme trying different */
-    background-color: #6FB893;
- }
-
 .thumbnail-pic{
   width: 320px;
   height: 150px;
@@ -33,10 +27,6 @@
 .cat-button {
   background-color: #F4EDD6;
 }
-
-.cat-button:hover {
-  background-color: red;
-  }
 
 .caption {
     background-color: #F4EDD6;

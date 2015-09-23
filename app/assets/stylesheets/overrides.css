@@ -1,3 +1,25 @@
+/********************
+* Site Wide         *
+********************/
+
+/**************************
+* Palette:
+***************************
+*  Cream: 					#F4EDD6
+*  Red: 						#E2493C
+*  Dark teal: 			#6FB893
+*  Light teal: 			#BED7C1
+*  Greenish slate:  #C6CAAF
+*  Dark mustard:    #B69155
+**************************/
+
+
+ body{
+    /*background-color: #BED7C1;  in scheme trying different */
+    background-color: #6FB893;
+ }
+
+
 #cart {
 	color: #6FB893;
 	margin-top: 13px;
@@ -34,3 +56,34 @@
 	color:  #BED7C1;
 	text-decoration: none;
 }
+
+/*************************
+* Content Form           *
+*************************/
+
+#form-pane{
+	margin-top: 40px;
+	margin-left: 40px;
+}
+.header-well{
+	margin: auto;
+	width: 85%;
+	}
+
+.spacer{
+	height: 20px;
+}
+
+.inner-form{
+	width: 85%;
+	margin: auto;
+}
+
+.question-box{
+	border: 3px solid #BED7C1;
+	background-color: #F4EDD6;
+	border-radius: 4px;
+	}
+
+
+
