@@ -3,7 +3,7 @@ class ContentController < ApplicationController
     @content = Content.new
   end
 
-  def submit
+  def create
     @content = Content.new(content_params)
     if @content.save
       redirect_to content_path
@@ -18,7 +18,15 @@ class ContentController < ApplicationController
 
   def edit
     @content = Content.find(params[:id])
-    byebug
+  end
+
+  def update
+    @content = Content.find(params[:id])
+    if @content.update(content_params)
+      redirect_to content_path
+    else
+      redirect_to edit_content_path
+    end
   end
 
   private
