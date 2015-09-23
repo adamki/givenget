@@ -61,7 +61,17 @@
                     </li>
                 </ul>
                   <div class='navbar-right'>
-                    <a class='navbar-text' href"#">Login</a>
+                    <% if current_user %>
+                      <li class='navbar-text'>
+                        Logged in as <%= current_user.name %>
+                      </li>
+                      <!-- <a class='navbar-text' href="/logout">Logout</a> -->
+                      <p class='navbar-text'>
+                        <%= link_to "Logout", logout_path, method: :delete %>
+                      </p>
+                    <% else %>
+                      <a class='navbar-text' href="/auth/twitter">Login</a>
+                    <% end %>
                     <i class='material-icons' id="cart" onclick="location.href='/cart'">shopping_cart</i>
                 </div>
             </div>
