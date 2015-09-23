@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
-  resources :items, only:[:index, :show, :new]
+  resources :items
   get '/cart', to: 'carts#show'
   get '/give', to: 'give#index'
   get '/auth/:provider/callback', to: 'sessions#create'
