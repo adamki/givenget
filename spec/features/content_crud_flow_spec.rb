@@ -40,13 +40,33 @@ feature 'content can be added' do
     end
 
     it 'can edit content' do
+      first_content = Content.all.first
       visit '/content'
+      expect(page).to have_content(first_content.name)
       first(:link, "Edit").click
       expect(current_path).to eq('/content/1/edit')
       fill_in :name, with: attributes_2.name
       fill_in 'Payload', with: attributes_2.payload
       click_button 'Save content'
+      expect(page).to have_content(attributes_2.name)
+      expect(page).to have_content(attributes_2.payload)
+      expect(page).to_not have_content(first_content.name)
+    end
 
+    it 'has links to delete content' do
+      visit '/content'
+      Content.all.each do |c|
+        expect(page).to have_link('Delete', delete_content_path(c))
+      end
+    end
+
+    it 'can delete content' do
+      visit '/content'
+      first_content = Content.all.first
+      expect(page).to have_content(first_content.name)
+      first(:link, "Delete").click
+      expect(current_path).to eq(content_path)
+      expect(page).to_not have_content(first_content.name)
     end
   end
 end

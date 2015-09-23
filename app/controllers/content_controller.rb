@@ -29,6 +29,12 @@ class ContentController < ApplicationController
     end
   end
 
+  def destroy
+    @content = Content.find(params[:id])
+    @content.delete
+    redirect_to content_path
+  end
+
   private
   def content_params
     params.require(:content).permit(:name, :payload)

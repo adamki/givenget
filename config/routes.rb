@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   patch '/content/submit', to: 'content#update'
   get '/content', to: 'content#index'
   get '/content/:id/edit', to: 'content#edit', as: 'edit_content'
-  delete '/content/:id', to: 'content#destroy'
+  delete '/content/:id', to: 'content#destroy', as: 'delete_content'
 end
