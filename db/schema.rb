@@ -29,14 +29,10 @@ ActiveRecord::Schema.define(version: 20150923031347) do
   add_index "categories_ideas_table", ["item_id"], name: "index_categories_ideas_table_on_item_id", using: :btree
 
   create_table "items", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "price"
-    t.string   "image"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.string  "title"
+    t.text    "description"
+    t.integer "price"
+    t.string  "image"
   end
 
 end
