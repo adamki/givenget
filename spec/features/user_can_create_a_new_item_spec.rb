@@ -32,7 +32,6 @@ feature 'user can create a new item' do
       click_link "Test Item"
       click_link "Edit"
       fill_in "Title", with: "New Test Item"
-      save_and_open_page
       click_button "Update Item"
       expect(page).to have_content("New Test Item")
     end
