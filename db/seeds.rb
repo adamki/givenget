@@ -22,6 +22,7 @@ items = Item.create([{title: 'pencil', description: 'bulk pencils', price: 1020,
                      {title: 'broken fork', description: 'its only kinda broken', price: 2000, image: 'https://broken-fork.com'},
                      {title: 'crate', description: 'put some stuff in them', price: 1279, image: 'https://crates.com'}])
 
+categories = Category.create([{name: "Profit"}, {name: "Business"}, {name: "Education"}, {name: "Technology"}, {name: "Sporting goods"}, {name: "Travel"}, {name: "Home Furnishings"}, {name: "Small Business"}])
 
 
 
