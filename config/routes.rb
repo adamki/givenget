@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/cart', to: 'carts#show'
   patch '/carts', to: 'carts#update'
   get '/give', to: 'give#index'
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/dashboard', to: 'sessions#show'
+  delete '/logout', to: 'sessions#destroy'
 
   #content routes - manually done b/c no singular/plural distinction
   get '/content/new', to: 'content#new'
