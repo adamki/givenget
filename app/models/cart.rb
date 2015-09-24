@@ -16,9 +16,4 @@ class Cart
     self.cart_data[item.id.to_s] = self.cart_data[item.id.to_s].to_i + 1
   end
 
-  # moved into application controller as helper for initial testing
-  # def total
-  #   self.items.reduce(0) { |acc, item| acc + item.price }
-  # end
-
 end

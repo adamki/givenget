@@ -1,10 +1,9 @@
 class CartsController < ApplicationController
 
   def show
-  @cart_items = cart_items_session.map do |item_id, quantity|
-  	CartItem.new(Item.find(item_id), quantity)
-  end
-
+  	@cart_items = cart_items_session.map do |item_id, quantity|  
+  		CartItem.new(Item.find(item_id), quantity)
+  	end
   end
 
   def create
