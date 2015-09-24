@@ -18,7 +18,7 @@ feature 'user can add items to a cart' do
       expect(page).to have_content('pencil')
       expect(page).to have_content('$10.20')
       expect(page).to have_content('$21.40')
-      # expect(page).to_not have_content('$Infinity')
+      expect(page).to_not have_content('$Infinity')
     end
 
   end

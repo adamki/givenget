@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   #move to cart model
   def cart_total(cart_items)
-    cart_items.reduce(0) { |acc, item| acc + (item.price * item.quantity.to_i) }
+    cart_items.reduce(0) { |acc, item| acc + item.subtotal }
   end
 
 end
