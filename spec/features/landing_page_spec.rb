@@ -11,7 +11,7 @@ feature 'landing page' do
   it 'user clicks on donate link to go donate items page' do
     visit '/'
     click_on 'Give'
-    expect(current_path).to eq(new_item_path)
+    expect(current_path).to eq(give_path)
   end
 
   it 'user clicks on view items link to go to items index path' do
