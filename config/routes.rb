@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   resources :items
   get '/cart', to: 'carts#show'
-  get '/give', to: 'give#index'
+  get '/give', to: 'welcome#give'
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/dashboard', to: 'sessions#show'
   delete '/logout', to: 'sessions#destroy'
