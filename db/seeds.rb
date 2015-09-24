@@ -30,7 +30,15 @@ content = Content.create([
        },
        {name: "Margerine",
         payload: "Maecenas tincidunt, elit nec posuere ullamcorper, justo lectus hendrerit purus, ac venenatis enim ligula eu felis. Nulla facilisi. Integer blandit nibh massa, nec commodo felis venenatis ac. Etiam semper porttitor leo sed sollicitudin. Nulla sed tortor massa. Morbi at orci neque. Curabitur semper sodales pulvinar. Donec luctus pharetra dolor, non porttitor sem facilisis sit amet. Aenean eu lectus purus. Vestibulum luctus at urna id euismod. Donec nulla enim, malesuada ac fermentum in, bibendum sed libero. Proin mattis nec ipsum a condimentum. Nulla eu placerat neque. Sed ac ornare lectus. Phasellus tempor nisi sit amet sem maximus, ullamcorper finibus dolor euismod. Phasellus posuere et ex vel sodales."
-       }])
+       },
+        {name: "about-us",
+        payload: "A charitable organization singly focused on providing individuals of all backgrounds what they need at a price they can afford, while allowing those who are so situated to give back."
+       }
+
+
+
+
+       ])
 
 
 

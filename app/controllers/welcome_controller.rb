@@ -3,6 +3,6 @@ class WelcomeController < ApplicationController
 
   end
   def about
-    
+    @content = (AboutContent.new).generate
   end
 end
