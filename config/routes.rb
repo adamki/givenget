@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/dashboard', to: 'sessions#show'
   delete '/logout', to: 'sessions#destroy'
+  get '/about', to: 'welcome#about'
 
   #content routes - manually done b/c no singular/plural distinction
   get '/content/new', to: 'content#new'

@@ -19,6 +19,14 @@
     background-color: #6FB893;
  }
 
+ /*************************
+ * About
+ **************************/
+
+ .about-header {
+ 	background-color: #C6CAAF;
+ }
+
 
 #cart {
 	color: #6FB893;
@@ -84,4 +92,3 @@
 	background-color: #F4EDD6;
 	border-radius: 4px;
 	}
-

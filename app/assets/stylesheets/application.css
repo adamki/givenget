@@ -81,3 +81,11 @@
   margin: 7px 15px 5px 0px;
   height: 100%;
 }
+
+.footer {
+  margin: 70px;
+}
+
+.homepage-thumbnail-pic {
+  max-height: 150px; height: 150px; overflow: hidden;
+}

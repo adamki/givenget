@@ -22,7 +22,12 @@ items = Item.create([{title: 'pencil', description: 'bulk pencils', price: 1020,
                      {title: 'broken fork', description: 'its only kinda broken', price: 2000, image: 'https://broken-fork.com'},
                      {title: 'crate', description: 'put some stuff in them', price: 1279, image: 'https://crates.com'}])
 
-categories = Category.create([{name: "Profit"}, {name: "Business"}, {name: "Education"}, {name: "Technology"}, {name: "Sporting goods"}, {name: "Travel"}, {name: "Home Furnishings"}, {name: "Small Business"}])
+categories = Category.create([{title: "Profit"}, {title: "Business"}, {title: "Education"}, {title: "Technology"}, {title: "Sporting goods"}, {title: "Travel"}, {title: "Home Furnishings"}, {title: "Small Business"}])
+
+items.each do |item|
+    count = rand(1..5)
+    item.categories.push(categories.sample(count))
+end
 
 content = Content.create([
        {name: "Butter",
@@ -30,7 +35,15 @@ content = Content.create([
        },
        {name: "Margerine",
         payload: "Maecenas tincidunt, elit nec posuere ullamcorper, justo lectus hendrerit purus, ac venenatis enim ligula eu felis. Nulla facilisi. Integer blandit nibh massa, nec commodo felis venenatis ac. Etiam semper porttitor leo sed sollicitudin. Nulla sed tortor massa. Morbi at orci neque. Curabitur semper sodales pulvinar. Donec luctus pharetra dolor, non porttitor sem facilisis sit amet. Aenean eu lectus purus. Vestibulum luctus at urna id euismod. Donec nulla enim, malesuada ac fermentum in, bibendum sed libero. Proin mattis nec ipsum a condimentum. Nulla eu placerat neque. Sed ac ornare lectus. Phasellus tempor nisi sit amet sem maximus, ullamcorper finibus dolor euismod. Phasellus posuere et ex vel sodales."
-       }])
+       },
+        {name: "about-us",
+        payload: "A charitable organization singly focused on providing individuals of all backgrounds what they need at a price they can afford, while allowing those who are so situated to give back."
+       }
+
+
+
+
+       ])
 
 
 
