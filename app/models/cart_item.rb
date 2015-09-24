@@ -7,6 +7,7 @@ class CartItem < SimpleDelegator
   end
 
   def subtotal
-    quantity * self.price
+  	# byebug
+    quantity.to_i * self.price
   end
 end

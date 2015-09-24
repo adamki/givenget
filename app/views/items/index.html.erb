@@ -45,14 +45,27 @@
 <!-- begin item listing -->
 <div class="row">
 <% @items.each do |item| %>
-  <div class="col-sm-4 col-lg-4 col-md-4">
+  <div class="col-sm-4 col-lg-4 col-md-4" id='<%= item.title %>'>
     <div class="thumbnail">
       <img src="http://placehold.it/320x150" alt="" class='thumbnail-pic'>
       <div class="caption">
-      <h4 class="pull-right"><%= dollar_string(item.price) %></h4>
-      <h4><%= link_to item.title, item %>
+      <h4 class="pull-right">
+        <%= dollar_string(item.price) %>
       </h4>
-      <p><%= item.description %></p>
+      <h4>
+        <%= link_to item.title, item %>
+      </h4>
+      <p>
+        <%= item.description %>
+      </p>
+      <%= form_for(:cart,
+       url: 'carts#new') do |f| %>
+       <%= f.hidden_field :item,
+      value: item.id %>
+       <%= f.label :quantity %>
+       <%= f.text_field :quantity %>
+      <%= f.submit "Add to Cart" %>
+      <% end %>
     </div>
   </div>
 </div>

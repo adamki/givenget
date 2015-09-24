@@ -8,33 +8,33 @@
     <th>Quantity</th>
     <th>Subtotal</th>
   </tr>
-  <% @cart.each do |cart_item| %>
+  <% @cart_items.each do |item| %>
     <tr>
       <td>
-        <a href="/items/<%=cart_item.id%>">
+        <a href="/items/<%=item.id%>">
           <div id='link' style="height:100%;width:100%">
-            <%= cart_item.title %>
+            <%= item.title %>
           </div>
         </a>
       </td>
-      <td><%= cart_item.description %></td>
-      <td><%= dollar_string(cart_item.price) %></td>
-      <td><%= cart_item.quantity %></td>
-      <td><%= dollar_string(cart_item.subtotal) %></td>
+      <td><%= item.description %></td>
+      <td><%= dollar_string(item.price) %></td>
+      <td><%= item.quantity %></td>
+      <td><%= dollar_string(item.subtotal) %></td>
     </tr>
   <% end %>
-  <% if !(@cart.empty?) %>
+  <% if !(@cart_items.empty?) %>
   <tr>
     <td></td><td></td><td></td><td></td>
-    <td><%= dollar_string(cart_total(@cart)) %></td>
+    <td><%= dollar_string(cart_total(@cart_items)) %></td>
   </tr>
   <% end %>
 </table>
 
-<% if @cart.empty? %>
-  <%= 'You have no items in your cart' if @cart.empty? %>
+<% if @cart_items.empty? %>
+  <%= 'You have no items in your cart' if @cart_items.empty? %>
 <% else %>
   <!-- <h3>Total: <%= @total %></h3> -->
-  <h3>Total: <%= dollar_string(cart_total(@cart)) %></h3>
+  <h3>Total: <%= dollar_string(cart_total(@cart_items)) %></h3>
   <%= link_to "Checkout" %>
 <% end %>
