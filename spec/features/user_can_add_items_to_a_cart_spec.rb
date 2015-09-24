@@ -6,6 +6,7 @@ feature 'user can add items to a cart' do
 		it 'can add an item to the cart' do
 			visit '/items'
 			 within('#pencil') do
+			 	fill_in("Quantity", with: "2")
       	click_on "Add to Cart"
       	expect(current_path).to eq('/items')
       end

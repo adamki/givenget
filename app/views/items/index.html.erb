@@ -58,7 +58,12 @@
       <p>
         <%= item.description %>
       </p>
-      <%= form_for(item, url: 'carts#show') do |f| %>
+      <%= form_for(:cart,
+       url: 'carts#new') do |f| %>
+       <%= f.hidden_field :item,
+      value: item.id %>
+       <%= f.label :quantity %>
+       <%= f.text_field :quantity %>
       <%= f.submit "Add to Cart" %>
       <% end %>
     </div>
