@@ -1,12 +1,10 @@
 require 'rails_helper'
 
-feature 'user can create a new item' do
-	context 'unauthenticated user' do
-
+  describe 'admin item functions' do
     let(:test_item){Item.create( title: "Test Item", description: "Test Description", price: 100) }
 
-		it 'can create a new item ' do
-			visit '/items/new'
+    xit 'can create a new item ' do
+      visit '/items/new'
       fill_in "Title", with: "bicycle"
       fill_in "Description", with: "A good trusty bike that is in need of a new home"
       fill_in "Price", with: "299.99"
@@ -15,7 +13,7 @@ feature 'user can create a new item' do
       expect(page).to have_content("bicycle")
     end
 
-    it 'can delete an existing item' do
+    xit 'can delete an existing item' do
       test_item
       visit items_path
       expect(page).to have_content("Test Item")
@@ -26,7 +24,7 @@ feature 'user can create a new item' do
       expect(page).not_to have_content("Test Item")
     end
 
-    it 'can edit an existing item' do
+    xit 'can edit an existing item' do
       test_item
       visit items_path
       click_link "Test Item"
@@ -36,4 +34,3 @@ feature 'user can create a new item' do
       expect(page).to have_content("New Test Item")
     end
   end
-end
