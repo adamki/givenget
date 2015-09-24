@@ -9,7 +9,7 @@
 items = Item.create([{title: 'pencil', description: 'bulk pencils', price: 1020, image: 'http://globe-views.com/dcim/dreams/pencil/pencil-01.jpg'},
                      {title: 'haircut', description: 'the most stylish', price: 1599, image: 'https://haircuts.com'},
                      {title: 'junk', description: 'some junk', price: 2099, image: 'https://junk.com'},
-                     {title: 'internet', description: 'not worth the price', price: 6000, image: 'https://internet.com'},
+                     {title: 'internet', description: 'not worth the price', price: 6016, image: 'https://internet.com'},
                      {title: 'dog', description: 'bark', price: 0010, image: 'https://dogs.com'},
                      {title: 'tree', description: 'also bark', price: 2399, image: 'https://trees.com'},
                      {title: 'swimming lessons', description: 'just don\'t drown', price: 799, image: 'https://swimming-lessons.com'},
