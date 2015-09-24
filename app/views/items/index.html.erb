@@ -6,9 +6,9 @@
   <div class="col-md-3">
   <p class="lead">give'n'get</p>
   <div class="list-group">
-    <a href="#" class="list-group-item cat-button" id="cat1">Category 1</a>
-    <a href="#" class="list-group-item cat-button">Category 2</a>
-    <a href="#" class="list-group-item cat-button">Category 3</a>
+    <% @categories.each do |cat| %>
+      <a href="#" class="list-group-item cat-button"><%= cat.title %></a>
+    <% end %>
   </div>
   </div>
 <div class="col-md-9">
