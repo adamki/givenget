@@ -5,7 +5,8 @@ feature 'user can see give page' do
 
 		it 'can see the email' do
 			visit '/give'
-			expect(page).to have_content('givenget@example.com')
+      save_and_open_page
+			expect(page).to have_content('Thank you for your interest in donating!')
 		end
 	end
 end
