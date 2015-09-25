@@ -40,9 +40,6 @@ content = Content.create([
         payload: "A charitable organization singly focused on providing individuals of all backgrounds what they need at a price they can afford, while allowing those who are so situated to give back."
        }
 
-
-
-
        ])
 
 
