@@ -51,6 +51,9 @@ feature 'Categories restfulness' do
     Category.first.items.each do |item|
       expect(page).to have_link(item.title, item)
     end
+    test_item = Category.first.items.first
+    first(:link, test_item.title).click
+    expect(current_path).to eq(item_path(test_item))
 
   end
 
