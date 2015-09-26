@@ -84,7 +84,13 @@ img.envelope{
 	text-align: center;
 }
 
-
+/*************************
+* Show pages (item, category..)
+**************************/
+.list-heading{
+	font-weight: bold;
+	font-size: 1.25em;
+}
 
 
 /*************************
