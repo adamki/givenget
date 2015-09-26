@@ -3,14 +3,14 @@
 <div class="row">
 
   <div class="col-md-3">
-      <!-- <h2>Categories</h2> -->
-      <div class="list-group">
-
-        <span class="list-group-item list-heading">Categories</span>
-        <% @categories.each do |cat| %>
-          <%= link_to cat.title, cat, class: "list-group-item" %>
-        <% end %>
-      </div>
+    <div class="list-group">
+      <span class="list-group-item list-heading">
+        Categories
+      </span>
+      <% @categories.each do |cat| %>
+        <%= link_to cat.title, cat, class: "list-group-item" %>
+      <% end %>
+    </div>
   </div>
 
   <div class="col-md-9">
