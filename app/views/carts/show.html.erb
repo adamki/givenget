@@ -9,7 +9,7 @@
     <th>Subtotal</th>
   </tr>
   <% @cart_items.each do |item| %>
-    <tr>
+    <tr id='<%= item.title %>'>
       <td>
         <a href="/items/<%=item.id%>">
           <div id='link' style="height:100%;width:100%">
@@ -21,6 +21,9 @@
       <td><%= dollar_string(item.price) %></td>
       <td><%= item.quantity %></td>
       <td><%= dollar_string(item.subtotal) %></td>
+      <td><%= button_to "Delete", cart_path(item_id: item.id), method: :put %></td>
+      <td><%= button_to "Add", cart_path(item_id: item.id, add: true), method: :put %></td>
+      <td><%= button_to "Remove", cart_path(item_id: item.id, remove: true), method: :put %></td>
     </tr>
   <% end %>
   <% if !(@cart_items.empty?) %>
