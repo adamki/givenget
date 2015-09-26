@@ -1,0 +1,28 @@
+<h1>Categories</h1>
+
+<table class="table">
+  <tr>
+    <th>Category</th>
+    <th>Delete</th>
+    <th>Items</th>
+  </tr>
+  <% @categories.each do |c| %>
+  <tr>
+    <td>
+      <a href="/categories/<%=c.id%>">
+        <div class='lead-column' style="height:100%;width:100%">
+          <%= c.title %>
+        </div>
+      </a>
+    </td>
+    <td>
+    
+    </td>
+    <td>
+
+    </td>
+
+  </tr>
+  <% end %>
+
+</table>
