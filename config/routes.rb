@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get '/cart', to: 'carts#show'
   get '/give', to: 'welcome#give'
+  get '/signin_or_signup', to: 'sessions#new'
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/dashboard', to: 'sessions#show'
   delete '/logout', to: 'sessions#destroy'

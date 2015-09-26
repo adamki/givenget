@@ -117,3 +117,15 @@
   background-color: #BED7C1;
   margin-bottom: 30px;
 }
+
+#twitter-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:100%;
+}
+
+#twitter-container {
+    position:relative;
+    padding-right:66.59%;
+}
