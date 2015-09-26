@@ -12,7 +12,7 @@ feature 'user can view their cart' do
         expect(page).to have_content('Quantity')
         expect(page).to have_content('Subtotal')
       end
-      skip "Cart being loaded with random number of items so skipping this test for now"
+      # skip "Cart being loaded with random number of items so skipping this test for now"
       expect(page).to have_content('You have no items in your cart')
     end
 
