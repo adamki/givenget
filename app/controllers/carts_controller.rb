@@ -8,7 +8,7 @@ class CartsController < ApplicationController
 
   def create
   	item_id = params[:cart][:item]
-  	cart_items_session[item_id] = params[:cart][:quantity]
+  	cart_items_session[item_id] = params[:cart][:quantity] if params[:cart][:quantity] != ""
   	redirect_to '/items'
   end
 

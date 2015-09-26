@@ -1,15 +1,18 @@
 require 'rails_helper'
 
-feature 'user can remove items from a cart' do 
+feature 'user can remove items from a cart' do
+
 	context 'unauthenticated' do
 
-		it 'can remove items from the cart' do
+    before :each do
 			visit '/items'
 		  within('#pencil') do
 	  	 	fill_in("Quantity", with: "2")
        	click_on "Add to Cart"
       end
+    end
 
+		it 'can remove items from the cart' do
      	expect(current_path).to eq('/items')
       visit cart_path
       within('#pencil') do
@@ -20,12 +23,6 @@ feature 'user can remove items from a cart' do
     end
 
     it 'can add items to the cart' do
-			visit '/items'
-		  within('#pencil') do
-	  	 	fill_in("Quantity", with: "2")
-       	click_on "Add to Cart"
-      end
-
       visit cart_path
       within('#pencil') do
         expect(page).to have_content("2")
@@ -36,12 +33,6 @@ feature 'user can remove items from a cart' do
     end
 
     it 'can subtract a single item from the cart' do
-			visit '/items'
-		  within('#pencil') do
-	  	 	fill_in("Quantity", with: "2")
-       	click_on "Add to Cart"
-      end
-
       visit cart_path
       within('#pencil') do
         expect(page).to have_content("2")
@@ -52,15 +43,11 @@ feature 'user can remove items from a cart' do
     end
 
     it 'does not remove an item into negative values' do
-			visit '/items'
-		  within('#pencil') do
-	  	 	fill_in("Quantity", with: "1")
-       	click_on "Add to Cart"
-      end
-
       visit cart_path
       within('#pencil') do
         expect(page).to have_content("1")
+        click_button "Remove"
+        click_button "Remove"
         click_button "Remove"
       end
 
