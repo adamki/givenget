@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'item' do
   context 'with valid attributes' do
 
-  let(:attributes){{title: 'pencil', description: 'bulk pencils', price: 1020, image: 'https://pencil-outlet.com'}}
+  let(:attributes){{title: 'pencil', description: 'bulk pencils', price: 1020, image: 'https://pencil-outlet.com', categories: [Category.first]}}
 
     it 'has attributes' do
       item = Item.new(attributes)
@@ -15,6 +15,16 @@ describe 'item' do
     end
 
   end
+
+  context 'with invalid attributes' do
+    let(:without_category){{title: 'pencil', description: 'bulk pencils', price: 1020, image: 'https://pencil-outlet.com'}}
+
+    it "must have a category" do
+      item = Item.new(without_category)
+      expect(item).to_not be_valid
+    end
+  end
+
 
   
 end

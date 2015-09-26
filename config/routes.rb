@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :items, only:[:index, :show, :new]
   resources :carts, only:[:create]
   resources :items
+  resources :categories, only:[:index, :show, :destroy, :new, :create]
 
   put '/cart', to: 'carts#update'
   get '/cart', to: 'carts#show'

@@ -84,7 +84,13 @@ img.envelope{
 	text-align: center;
 }
 
-
+/*************************
+* Show pages (item, category..)
+**************************/
+.list-heading{
+	font-weight: bold;
+	font-size: 1.25em;
+}
 
 
 /*************************
@@ -114,3 +120,21 @@ img.envelope{
 	background-color: #F4EDD6;
 	border-radius: 4px;
 	}
+
+/**************************
+* Index
+**************************/
+
+.lead-column{
+	color: #F4EDD6;
+	font-size: 1.25em; 
+	}
+
+/*************************
+* Form
+*************************/
+
+.btn-submit{
+	margin: 15px;
+	}
+
