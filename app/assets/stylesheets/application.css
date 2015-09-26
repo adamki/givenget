@@ -118,14 +118,23 @@
   margin-bottom: 30px;
 }
 
-#twitter-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height:100%;
+#login-container {
+  border-radius: 10px;
+  background-color: #BED7C1;
+  height: 350px;
 }
 
-#twitter-container {
-    position:relative;
-    padding-right:66.59%;
+#login-field {
+  margin-top: 15px;
+}
+
+.login-button {
+  min-width: 150px;
+  line-height: 26px;
+  padding-top: 3px;
+  padding-right: 50px;
+  padding-bottom: 5px;
+  padding-left: 50px;
+  margin-top: 0px;
+  border-radius: 5px;
 }
