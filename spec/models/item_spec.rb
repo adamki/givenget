@@ -3,7 +3,10 @@ require 'rails_helper'
 describe 'item' do
   context 'with valid attributes' do
 
-  let(:attributes){{title: 'pencil', description: 'bulk pencils', price: 1020, image: 'https://pencil-outlet.com'}}
+  let(:attributes){{title: 'pencil',
+                    description: 'bulk pencils',
+                    price: 1020,
+                    image: 'https://pencil-outlet.com'}}
 
     it 'is valid with valid attributes' do
       item = Item.new(attributes)
@@ -18,7 +21,10 @@ describe 'item' do
 
   context 'with invalid attributes' do
 
-    let(:attributes){{title: 'pencil', description: 'bulk pencils', price: 1020, image: 'https://pencil-outlet.com'}}
+    let(:attributes){{title: 'pencil',
+                      description: 'bulk pencils',
+                      price: 1020,
+                      image: 'https://pencil-outlet.com'}}
 
     it 'requires title attributes' do
       item = Item.new(attributes)
