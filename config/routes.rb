@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
   resources :items, only:[:index, :show, :new]
-  resources :carts, only:[:show, :create]
+  resources :carts, only:[:create]
   resources :items
 
+  put '/cart', to: 'carts#update'
   get '/cart', to: 'carts#show'
   get '/give', to: 'welcome#give'
   get '/auth/:provider/callback', to: 'sessions#create'

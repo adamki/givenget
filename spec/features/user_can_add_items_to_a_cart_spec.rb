@@ -20,6 +20,16 @@ feature 'user can add items to a cart' do
       expect(page).to have_content('$21.40')
       # expect(page).to_not have_content('$Infinity')
     end
+  end
 
+  it 'user can not add a qunatity of 0 to the cart' do
+			visit '/items'
+			 within('#pencil') do
+      	click_on "Add to Cart"
+      	expect(current_path).to eq('/items')
+      end
+      visit '/cart'
+      save_and_open_page
+      expect(page).to have_content("You have no items in your cart")
   end
 end
