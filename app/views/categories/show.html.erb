@@ -3,10 +3,10 @@
 <div class="row">
 
   <div class="col-md-3">
-      <p class="lead">give'n'get</p>
+      <h1><%= @category.title %></h1>
       <div class="list-group">
-        <% @categories.each do |cat| %>
-          <%= link_to cat.title, cat, class: "list-group-item" %>
+        <% @category.items.each do |item| %>
+          <%= link_to item.title, item, class: "list-group-item" %>
         <% end %>
       </div>
   </div>
@@ -15,9 +15,9 @@
     <div class="thumbnail">
         <img class="img-responsive" src="http://placehold.it/800x300" alt="">
         <div class="caption-full">
-            <h4 class="pull-right"><%= dollar_string(@item.price) %></h4>
-            <h4><%= @item.title %></h4>
-            <p><%= @item.description %></p>
+            <h4 class="pull-right"></h4>
+            <h4><%= @category.title %></h4>
+            <p></p>
         </div>
     </div>
   </div>
@@ -29,4 +29,3 @@
   <script src="js/bootstrap.min.js"></script>
 </div>
 </div>
-</body>

@@ -9,17 +9,17 @@
   <% @categories.each do |c| %>
   <tr>
     <td>
-      <a href="/categories/<%=c.id%>">
-        <div class='lead-column' style="height:100%;width:100%">
-          <%= c.title %>
-        </div>
-      </a>
+      <%= link_to c.title, c, class: "lead-column" %>
     </td>
     <td>
-    
+      <%= link_to category_path(c), method: :delete, class: "btn btn-danger" do %>
+          Delete
+        <% end %>
     </td>
     <td>
-
+      <% c.items.each do |item| %>
+        <%= item.title %> | 
+      <% end %>
     </td>
 
   </tr>
