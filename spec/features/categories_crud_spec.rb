@@ -46,4 +46,12 @@ feature 'Categories restfulness' do
     expect(current_path).to eq("/categories/new")
   end
 
+  it "can visit items from categories index" do
+    visit '/categories'
+    Category.first.items.each do |item|
+      expect(page).to have_link(item.title, item)
+    end
+
+  end
+
 end
