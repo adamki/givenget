@@ -39,5 +39,11 @@ feature 'Categories restfulness' do
     expect(Category.count).to eq(cat_count - 1)
   end
 
+  it "can create a new category" do
+    visit '/categories'
+    expect(page).to have_link("Create New Category")
+    click_link("Create New Category")
+    expect(current_path).to eq("/categories/new")
+  end
 
 end
