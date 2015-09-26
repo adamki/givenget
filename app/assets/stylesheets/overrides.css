@@ -130,6 +130,19 @@ img.envelope{
 	font-size: 1.25em; 
 	}
 
+.index-cart-btn {
+	margin-left: 10px;
+}
+
+.qty{
+	margin-left: 25px;
+	}
+
+.item-description{
+	height: 90px;
+	/*margin-bottom: 20px;*/
+}
+
 /*************************
 * Form
 *************************/

@@ -7,7 +7,7 @@ feature 'user can remove items from a cart' do
     before :each do
 			visit '/items'
 		  within('#pencil') do
-	  	 	fill_in("Quantity", with: "2")
+	  	 	fill_in("Qty:", with: "2")
        	click_on "Add to Cart"
       end
     end
