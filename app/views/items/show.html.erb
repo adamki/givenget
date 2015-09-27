@@ -15,12 +15,18 @@
 
   <div class="col-md-9">
     <div class="thumbnail">
-        <img class="img-responsive" src="http://placehold.it/800x300" alt="">
-        <div class="caption-full">
-            <h4 class="pull-right"><%= dollar_string(@item.price) %></h4>
-            <h4><%= @item.title %></h4>
-            <p><%= @item.description %></p>
-        </div>
+      <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+      <div class="caption-full">
+        <h4 class="pull-right"><%= dollar_string(@item.price) %></h4>
+        <h4><%= @item.title %></h4>
+        <p><%= @item.description %></p>
+        <%= form_for(:cart, url: carts_path) do |f| %>
+          <%= f.hidden_field :item, value: @item.id %>
+          <%= f.submit "Add to Cart", class: "btn btn-primary index-cart-btn" %>
+          <%= f.label :quantity, "Qty: ", class: "qty" %>
+          <%= f.text_field :quantity, maxlength: 3, size: 3, value: "1" %>
+        <% end %>
+      </div>
     </div>
   </div>
 

@@ -27,6 +27,23 @@
  	background-color: #C6CAAF;
  }
 
+/***************************
+* Cart -- not all may be cart
+*    please verify
+***************************/
+
+.cart-checkout-btn{
+	margin: 20px;
+	}
+
+.cart-delete-btn{
+	margin-left: 20px;
+	}
+
+.btn-cart-qty{
+	margin-left: 3px;
+	margin-right: 3px;
+}
 
 #cart {
 	color: #6FB893;
@@ -126,9 +143,23 @@ img.envelope{
 **************************/
 
 .lead-column{
-	color: #F4EDD6;
+	color: black;
+	font-weight: bold;
 	font-size: 1.25em; 
 	}
+
+.index-cart-btn {
+	margin-left: 10px;
+}
+
+.qty{
+	margin-left: 25px;
+	}
+
+.item-description{
+	height: 90px;
+	/*margin-bottom: 20px;*/
+}
 
 /*************************
 * Form

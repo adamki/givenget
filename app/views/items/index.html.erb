@@ -55,16 +55,16 @@
       <h4>
         <%= link_to item.title, item %>
       </h4>
-      <p>
+      <p class="item-description">
         <%= item.description %>
       </p>
       <%= form_for(:cart,
-       url: 'carts#new') do |f| %>
+       url: carts_path) do |f| %>
        <%= f.hidden_field :item,
       value: item.id %>
-       <%= f.label :quantity %>
-       <%= f.text_field :quantity %>
-      <%= f.submit "Add to Cart" %>
+       <%= f.submit "Add to Cart", class: "btn btn-primary index-cart-btn" %>
+       <%= f.label :quantity, "Qty: ", class: "qty" %>
+       <%= f.text_field :quantity, maxlength: 3, size: 3, value: "1" %>
       <% end %>
     </div>
   </div>
