@@ -1,6 +1,7 @@
 class OrderItem < ActiveRecord::Base
   belongs_to :order
   belongs_to :item
-  validates :order, presence: true
-  validates :item, presence: true
+  validates :order_id, presence: true
+  validates :item_id, presence: true
+  validates :item_quantity, presence: true
 end
