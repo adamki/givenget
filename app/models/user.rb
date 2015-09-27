@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :provider, :uid, :name, :token, :secret, presence: true
+  validates :uid, :name, :provider, presence: true
   validates :uid, uniqueness: true
 
   def self.find_or_create_from_auth_hash(auth_hash)

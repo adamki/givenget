@@ -15,7 +15,7 @@ RSpec.configure do |config|
 
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:twitter] = OpenStruct.new({
-      provider: 'twitter',
+      'provider' => 'twitter',
       'uid' => '123545',
       'info' => OpenStruct.new({
         'name' => "Test User"
@@ -25,6 +25,16 @@ RSpec.configure do |config|
         'secret' => 'secret123'
       })
     })
+
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:identity] = OpenStruct.new({
+      'uid' => '123545',
+      'provider' => 'identity',
+      'info' => OpenStruct.new({
+        'name' => "user name"
+      })
+    })
+
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

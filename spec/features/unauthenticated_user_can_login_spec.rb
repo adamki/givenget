@@ -11,7 +11,7 @@ feature 'unauthenticated user create account and login' do
       within('.navbar') do
         expect(page).to have_content('Logged in as Test User') #my user name
         expect(page).to have_link('Logout')
-        expect(page).to_not have_link('Login')
+        expect(page).to_not have_link('Login/Create Account')
       end
       expect(page).to have_content('Welcome Test User') #profile info
       expect(page).to have_content('Donate Items')
@@ -19,12 +19,6 @@ feature 'unauthenticated user create account and login' do
       expect(page).to have_content("Your Give'n'Get history:")
     end
 
-  end
-
-  context 'with valid attributes' do
-    # visit '/'
-    # click_on 'Login/Create Account'
-    # click_on 'Create an account'
   end
 
 end

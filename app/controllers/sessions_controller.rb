@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :create
 
   def new
-    @message = "#{params[:message]} please try again."
+    @message = "#{params[:message]} please try again." if params[:message]
   end
 
   def create

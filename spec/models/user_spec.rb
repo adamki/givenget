@@ -45,18 +45,6 @@ describe 'user' do
       expect(@user).to_not be_valid
     end
 
-    it 'requires token attribute' do
-      @user.token = nil
-
-      expect(@user).to_not be_valid
-    end
-
-    it 'requires secret attribute' do
-      @user.secret = nil
-
-      expect(@user).to_not be_valid
-    end
-
   end
 
   context 'with non-unique uid' do
