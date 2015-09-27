@@ -115,9 +115,10 @@
 }
 
 .home-topic {
-  height: 130px;
+  height: 100%;
   background-color: #BED7C1;
   margin-bottom: 30px;
+  border-radius: 10px;
 }
 
 #login-container {
