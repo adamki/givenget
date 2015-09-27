@@ -6,11 +6,9 @@ class OrderCreator
   end
 
   def generate
-    order = Order.create
-    order_items = cart.map do |item|
+    order = cart.each_with_object(Order.create) do |item, order|
       OrderItem.new(order_item_params(item, order))
     end
-    order
   end
 
   def order_item_params(cart_item, order)
@@ -20,10 +18,6 @@ class OrderCreator
       item_price: item.price,
       order: order
     }
-  end
-
-  def create_order_items
-
   end
 
 end
