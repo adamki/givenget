@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :carts, only:[:create]
   resources :items
   resources :categories, only:[:index, :show, :destroy, :new, :create]
-  resources :orders, only:[:index]
 
   put '/cart', to: 'carts#update'
   get '/cart', to: 'carts#show'
@@ -24,4 +23,8 @@ Rails.application.routes.draw do
   get '/content', to: 'content#index'
   get '/content/:id/edit', to: 'content#edit', as: 'edit_content'
   delete '/content/:id', to: 'content#destroy', as: 'delete_content'
+
+  namespace :admin do
+    resources :orders, only:[:index]
+  end
 end
