@@ -1,6 +1,57 @@
-<h1><%= "Welcome #{current_user.name}" %></h1>
-
-<%= link_to "Donate Items", new_item_path %>
-<%= link_to "View Items", items_path%>
-
-<h3>Your Give'n'Get history:</h3>
+<div class="container" id="login-container">
+  <h1 class="text-center"><%= "Welcome #{current_user.name}" %></h1>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-2 text-center">
+      <a class="btn-left btn btn-clear btn-sm btn-min-block"
+       href="/give"><h1>Give</h1></a>
+    </div>
+    <div class="col-md-2 text-center">
+      <a class="btn-right btn btn-clear btn-sm btn-min-block"
+       href="/items"><h1>Get</h1></a>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+<div class="container" id="history">
+  <h2 class="text-center">Your Give'n'Get history:</h2>
+  <div class="col-md-5 text-center" id="give-history">
+    <h3>What you Gave</h3>
+    <table class="table">
+      <tr>
+        <th>
+          Date
+        </th>
+        <th>
+          Item or Service
+        </th>
+        <th>
+          Qty
+        </th>
+        <th>
+          Getters Benefitted
+        </th>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-2"></div>
+  <div class="col-md-5 text-center" id="get-history">
+    <h3>What you Got</h3>
+    <table class="table">
+      <tr>
+        <th>
+          Date
+        </th>
+        <th>
+          Item or Service
+        </th>
+        <th>
+          Qty
+        </th>
+        <th>
+          Cost
+        </th>
+      </tr>
+    </table>
+  </div>
+</div>
