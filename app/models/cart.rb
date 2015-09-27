@@ -13,13 +13,32 @@ class Cart
     end
   end
 
-  def add_item(item_id)
+  def adjust_cart_item_qty(params)
+    if params[:add]
+      self.increment(params[:item_id])
+    elsif params[:remove]
+      decrement(params[:item_id])
+    else
+      remove(params[:item_id])
+    end
+  end
+
+  def increment(item_id)
     item = Item.find(item_id)
     self.cart_data[item.id.to_s] = self.cart_data[item.id.to_s].to_i + 1
   end
 
-  def remove_item(item_id)
+  def decrement(item_id)
+    item = Item.find(item_id)
+    if self.cart_data[item.id.to_s].to_i > 0
+      self.cart_data[item.id.to_s] = self.cart_data[item.id.to_s].to_i - 1
+    else
+      remove(item_id)
+    end
+  end
 
+  def remove(item_id)
+    self.cart_data.delete(item_id)
   end
 
   def total
