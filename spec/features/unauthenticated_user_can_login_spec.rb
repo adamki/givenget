@@ -14,8 +14,8 @@ feature 'unauthenticated user create account and login' do
         expect(page).to_not have_link('Login/Create Account')
       end
       expect(page).to have_content('Welcome Test User') #profile info
-      expect(page).to have_content('Donate Items')
-      expect(page).to have_content('View Items')
+      expect(page).to have_content('Give')
+      expect(page).to have_content('Get')
       expect(page).to have_content("Your Give'n'Get history:")
     end
 
