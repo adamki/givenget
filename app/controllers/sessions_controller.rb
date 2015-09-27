@@ -22,6 +22,11 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
+  def error
+    
+
+  end
+
   protected
 
   def auth_hash

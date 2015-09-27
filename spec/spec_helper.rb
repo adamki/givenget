@@ -45,6 +45,18 @@ RSpec.configure do |config|
       user.save
     end
 
+    def admin_logout!
+      click_on "Logout"
+      user = User.last
+      user.role = "user"
+      user.save
+    end
+
+    def login_user!
+      visit signin_or_signup_path
+      click_on "twitter-link"
+    end
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

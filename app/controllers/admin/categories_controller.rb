@@ -19,7 +19,6 @@ class Admin::CategoriesController < AdminController
     if @category.save
       redirect_to admin_categories_path
     else
-      # flash message
       redirect_to admin_categories_path
     end
   end

@@ -9,6 +9,10 @@ feature 'Categories restfulness' do
       visit '/admin/categories'
     end
 
+    after :each do
+      admin_logout!
+    end
+
     it 'displays all categories' do
       expect(current_path).to eq(admin_categories_path)
       Category.all.each do |cat|
@@ -61,4 +65,25 @@ feature 'Categories restfulness' do
 
     end
   end
+
+  context 'unauthenticated user' do
+
+    it "cannot visit admin/categories" do
+      visit '/admin/categories'
+
+      expect(current_path).to eq('/error'), "only admin should see categories index"
+    end
+
+  end
+
+  context 'authenticated non-admin user' do
+
+    it "cannot visit admin/categories" do
+      login_user!
+      visit '/admin/categories'
+
+      expect(current_path).to eq('/error'), "only admin should see categories index"
+    end
+  end
+
 end
