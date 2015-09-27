@@ -3,6 +3,8 @@ require 'ostruct'
 
 RSpec.configure do |config|
 
+  config.backtrace_exclusion_patterns = []
+  config.backtrace_exclusion_patterns << /.*\/gems\/.*/
     config.before(:suite) do
       DatabaseCleaner.strategy = :transaction
       DatabaseCleaner.clean_with(:truncation)

@@ -5,8 +5,7 @@ feature 'about page flow' do
     visit '/about'
   end
 
-  #george creating link
-  xit 'is accessible from the home page' do
+  it 'is accessible from the home page' do
     visit '/'
     click_link('About')
     expect(current_path).to eq('/about')

@@ -6,7 +6,8 @@ describe 'item' do
   let(:attributes){{title: 'pencil',
                     description: 'bulk pencils',
                     price: 1020,
-                    image: 'https://pencil-outlet.com'}}
+                    image: 'https://pencil-outlet.com',
+                    categories: [Category.first]}}
 
     it 'is valid with valid attributes' do
       item = Item.new(attributes)
@@ -24,7 +25,13 @@ describe 'item' do
     let(:attributes){{title: 'pencil',
                       description: 'bulk pencils',
                       price: 1020,
-                      image: 'https://pencil-outlet.com'}}
+                      image: 'https://pencil-outlet.com',
+                      categories: [Category.first]}}
+
+    let(:without_category){{title: 'pencil',
+                            description: 'bulk pencils',
+                            price: 1020,
+                            image: 'https://pencil-outlet.com'}}
 
     it 'requires title attributes' do
       item = Item.new(attributes)
@@ -43,7 +50,10 @@ describe 'item' do
     it 'requires price attributes' do
       item = Item.new(attributes)
       item.price = nil
+    end
 
+    it "must have a category" do
+      item = Item.new(without_category)
       expect(item).to_not be_valid
     end
   end

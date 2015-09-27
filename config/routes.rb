@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
   resources :items, only:[:index, :show, :new]
-  resources :carts, only:[:show, :create]
+  resources :carts, only:[:create]
   resources :items
+  resources :categories, only:[:index, :show, :destroy, :new, :create]
 
+  put '/cart', to: 'carts#update'
   get '/cart', to: 'carts#show'
   get '/give', to: 'welcome#give'
   get '/signin_or_signup', to: 'sessions#new'
