@@ -57,12 +57,14 @@
     color: #6FB893;
     background-color: #F4EDD6;
     border-color: #6FB893;
+    border-radius: 10px;
 }
 
 .btn-right {
     color: #F4EDD6;
     background-color: #6FB893;
     border-color: #F4EDD6;
+    border-radius: 10px;
 }
 
 .btn-left:hover {
@@ -133,6 +135,26 @@
 
 #login-field {
   margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#history {
+  margin-top: 50px;
+  background-color: #C6CAAF;
+  border-radius: 10px;
+}
+
+#give-history {
+  color: #6FB893;
+  background-color: #F4EDD6;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+#get-history {
+  color: #F4EDD6;
+  background-color: #6FB893;
+  border-radius: 10px;
   margin-bottom: 15px;
 }
 
