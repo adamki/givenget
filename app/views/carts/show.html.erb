@@ -12,14 +12,13 @@
     <tr id='<%= item.title %>'>
       <td>
         <%= link_to item.title, item, class: 'lead-column' %>
+                <%= link_to "x", cart_path(item_id: item.id), method: :put, class: "btn btn-danger btn-xs cart-delete-btn" %> (remove from cart)
       </td>
       <td><%= item.description %></td>
       <td><%= dollar_string(item.price) %></td>
-      <td><%= item.quantity %></td>
+      <td><%= link_to "-", cart_path(item_id: item.id, remove: true), method: :put, class: "btn btn-primary btn-xs btn-cart-qty btn-danger" %><%= item.quantity %><%= link_to "+", cart_path(item_id: item.id, add: true), method: :put, class: "btn btn-primary btn-xs btn-cart-qty btn-success" %></td>
       <td><%= dollar_string(item.subtotal) %></td>
-      <td><%= button_to "Delete", cart_path(item_id: item.id), method: :put %></td>
-      <td><%= button_to "Add", cart_path(item_id: item.id, add: true), method: :put %></td>
-      <td><%= button_to "Remove", cart_path(item_id: item.id, remove: true), method: :put %></td>
+<!--  -->
     </tr>
   <% end %>
   <% if !(cart.empty?) %>
@@ -35,5 +34,5 @@
 <% else %>
   <!-- <h3>Total: <%= @total %></h3> -->
   <h3>Total: <%= dollar_string(cart.total) %></h3>
-  <%= link_to "Checkout", items_path, class: "btn-primary btn" %>
+  <%= link_to "Checkout", items_path, class: "btn-primary btn cart-checkout-btn" %>
 <% end %>

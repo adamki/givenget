@@ -27,6 +27,23 @@
  	background-color: #C6CAAF;
  }
 
+/***************************
+* Cart -- not all may be cart
+*    please verify
+***************************/
+
+.cart-checkout-btn{
+	margin: 20px;
+	}
+
+.cart-delete-btn{
+	margin-left: 20px;
+	}
+
+.btn-cart-qty{
+	margin-left: 3px;
+	margin-right: 3px;
+}
 
 #cart {
 	color: #6FB893;

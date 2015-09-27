@@ -16,7 +16,7 @@ feature 'user can remove items from a cart' do
      	expect(current_path).to eq('/items')
       visit cart_path
       within('#pencil') do
-        click_on "Delete"
+        click_on "x"
       end
 
       expect(page).not_to have_content("pencil")
@@ -26,7 +26,7 @@ feature 'user can remove items from a cart' do
       visit cart_path
       within('#pencil') do
         expect(page).to have_content("2")
-        click_button "Add"
+        click_on "+"
       end
 
       expect(page).to have_content("3")
@@ -36,7 +36,7 @@ feature 'user can remove items from a cart' do
       visit cart_path
       within('#pencil') do
         expect(page).to have_content("2")
-        click_button "Remove"
+        click_on "-"
       end
 
       expect(page).to have_content("1")
@@ -46,9 +46,9 @@ feature 'user can remove items from a cart' do
       visit cart_path
       within('#pencil') do
         expect(page).to have_content("1")
-        click_button "Remove"
-        click_button "Remove"
-        click_button "Remove"
+        click_on "-"
+        click_on "-"
+        click_on "-"
       end
 
       expect(page).to have_content("You have no items in your cart")
