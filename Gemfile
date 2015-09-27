@@ -17,6 +17,8 @@ gem 'puma'
 gem 'pg'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-identity'
+gem 'bcrypt'
 
 group :development, :test do
   gem 'byebug'

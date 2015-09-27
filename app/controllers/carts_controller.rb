@@ -1,16 +1,18 @@
 class CartsController < ApplicationController
 
   def show
-  	@cart_items = cart_items_session.map do |item_id, quantity|  
-  		CartItem.new(Item.find(item_id), quantity)
-  	end
   end
 
   def create
   	item_id = params[:cart][:item]
-  	cart_items_session[item_id] = params[:cart][:quantity]
-  	
+  	cart_items_session[item_id] = params[:cart][:quantity] if params[:cart][:quantity] != ""
+    cart
   	redirect_to '/items'
+  end
+
+  def update
+    cart.adjust_cart_item_qty(params)
+    redirect_to cart_path
   end
 
   private
@@ -21,5 +23,4 @@ class CartsController < ApplicationController
   def cart_items_session
   	cart_session["items"] ||= {}
   end
-
 end

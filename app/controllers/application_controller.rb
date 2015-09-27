@@ -6,16 +6,16 @@ class ApplicationController < ActionController::Base
   helper_method :cart, :cart_total, :current_user
 
   def current_user
+    # byebug
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def cart
-    Cart.new(session[:cart]).items || []
-  end
-
-  #move to cart model
-  def cart_total(cart_items)
-    cart_items.reduce(0) { |acc, item| acc + (item.price * item.quantity.to_i) }
+    if session[:cart]
+      @cart ||= Cart.new(session[:cart]["items"])
+    else
+      @cart = Cart.new
+    end
   end
 
 end
