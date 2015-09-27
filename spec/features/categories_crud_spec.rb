@@ -72,6 +72,8 @@ feature 'Categories restfulness' do
       visit '/admin/categories'
 
       expect(current_path).to eq('/error'), "only admin should see categories index"
+      expect(page).to have_content("You are not authorized to be here :(")
+
     end
 
   end
@@ -83,6 +85,7 @@ feature 'Categories restfulness' do
       visit '/admin/categories'
 
       expect(current_path).to eq('/error'), "only admin should see categories index"
+      expect(page).to have_content("You are not authorized to be here :(")
     end
   end
 

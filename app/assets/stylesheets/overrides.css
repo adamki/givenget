@@ -145,7 +145,7 @@ img.envelope{
 .lead-column{
 	color: black;
 	font-weight: bold;
-	font-size: 1.25em; 
+	font-size: 1.25em;
 	}
 
 .index-cart-btn {
@@ -169,3 +169,19 @@ img.envelope{
 	margin: 15px;
 	}
 
+  /*************************
+  * Error
+  *************************/
+
+  .error-flash {
+    color: #E2493C;
+    background-color: #F4EDD6;
+    font-size: 3em;
+    font-weight: bolder;
+    margin-bottom: 50px;
+  }
+
+  .error-flash img {
+    width: 90%;
+    margin-bottom: 50px;
+  }
