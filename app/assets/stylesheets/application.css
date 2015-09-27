@@ -124,8 +124,16 @@
   height: 350px;
 }
 
+#create-account-container {
+  border-radius: 10px;
+  background-color: #BED7C1;
+  height: 100%;
+  margin-bottom: 40px;
+}
+
 #login-field {
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .login-button {
@@ -136,5 +144,11 @@
   padding-bottom: 5px;
   padding-left: 50px;
   margin-top: 0px;
+  border-radius: 5px;
+}
+
+.invalid-credentials {
+  color: #E2493C;
+  background-color: #F4EDD6;
   border-radius: 5px;
 }
