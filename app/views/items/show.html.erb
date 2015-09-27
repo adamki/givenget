@@ -20,7 +20,7 @@
         <h4 class="pull-right"><%= dollar_string(@item.price) %></h4>
         <h4><%= @item.title %></h4>
         <p><%= @item.description %></p>
-        <%= form_for(:cart, url: 'carts#new') do |f| %>
+        <%= form_for(:cart, url: carts_path) do |f| %>
           <%= f.hidden_field :item, value: @item.id %>
           <%= f.submit "Add to Cart", class: "btn btn-primary index-cart-btn" %>
           <%= f.label :quantity, "Qty: ", class: "qty" %>

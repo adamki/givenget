@@ -11,11 +11,7 @@
   <% cart.each do |item| %>
     <tr id='<%= item.title %>'>
       <td>
-        <a href="/items/<%= item.id %>">
-          <div id='link' style="height:100%;width:100%">
-            <%= item.title %>
-          </div>
-        </a>
+        <%= link_to item.title, item, class: 'lead-column' %>
       </td>
       <td><%= item.description %></td>
       <td><%= dollar_string(item.price) %></td>
@@ -39,5 +35,5 @@
 <% else %>
   <!-- <h3>Total: <%= @total %></h3> -->
   <h3>Total: <%= dollar_string(cart.total) %></h3>
-  <%= link_to "Checkout" %>
+  <%= link_to "Checkout", items_path, class: "btn-primary btn" %>
 <% end %>
