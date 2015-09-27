@@ -12,13 +12,13 @@
       <%= link_to c.title, c, class: "lead-column" %>
     </td>
     <td>
-      <%= link_to category_path(c), method: :delete, class: "btn btn-danger" do %>
+      <%= link_to admin_category_path(c), method: :delete, class: "btn btn-danger" do %>
           Delete
         <% end %>
     </td>
     <td>
       <% c.items.each do |item| %>
-        <%= link_to item.title, item %> | 
+        <%= link_to item.title, item %> |
       <% end %>
     </td>
 
@@ -27,4 +27,4 @@
 
 </table>
 
-<%= link_to "Create New Category", new_category_path, class: "btn btn-primary btn-large" %>
+<%= link_to "Create New Category", new_admin_category_path, class: "btn btn-primary btn-large" %>

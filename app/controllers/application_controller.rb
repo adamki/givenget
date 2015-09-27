@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :cart, :cart_total, :current_user
+  helper_method :cart, :cart_total, :current_user, :current_admin?
 
   def current_user
     # byebug
@@ -18,4 +18,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_admin?
+    current_user && current_user.role == "admin"
+  end
 end
