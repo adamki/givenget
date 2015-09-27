@@ -17,12 +17,12 @@ feature 'user can add items to a cart' do
       visit '/cart'
       expect(page).to have_content('pencil')
       expect(page).to have_content('$10.20')
-      expect(page).to have_content('$21.40')
+      expect(page).to have_content('$20.40')
       # expect(page).to_not have_content('$Infinity')
     end
   end
 
-  xit 'user can not add a qunatity of 0 to the cart' do
+  it 'user can not add a qunatity of 0 to the cart' do
 			visit '/items'
 			 within('#pencil') do
         fill_in("Qty:", with: "0")

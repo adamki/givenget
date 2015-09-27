@@ -1,7 +1,9 @@
 class Cart
+  include Enumerable
   attr_accessor :cart_data
-  def initialize(cart_data)
-    @cart_data = cart_data || Hash.new(0)
+
+  def initialize(cart_data=Hash.new(0))
+    @cart_data = cart_data
   end
 
   def items
@@ -14,6 +16,24 @@ class Cart
   def add_item(item_id)
     item = Item.find(item_id)
     self.cart_data[item.id.to_s] = self.cart_data[item.id.to_s].to_i + 1
+  end
+
+  def remove_item(item_id)
+
+  end
+
+  def total
+    self.reduce(0) { |acc, cart_item| acc + (cart_item.price * cart_item.quantity.to_i) }
+  end
+
+  def empty?
+    !(self.any? { |item| item.quantity.to_i > 0 })
+  end
+
+  def each
+    self.items.each do |item|
+      yield item
+    end
   end
 
 end

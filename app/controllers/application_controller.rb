@@ -10,12 +10,11 @@ class ApplicationController < ActionController::Base
   end
 
   def cart
-    Cart.new(session[:cart]).items || []
-  end
-
-  #move to cart model
-  def cart_total(cart_items)
-    cart_items.reduce(0) { |acc, item| acc + (item.price * item.quantity.to_i) }
+    if session[:cart]
+      @cart ||= Cart.new(session[:cart]["items"])
+    else
+      @cart = Cart.new
+    end
   end
 
 end
