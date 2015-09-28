@@ -26,9 +26,14 @@
           <%= f.label :quantity, "Qty: ", class: "qty" %>
           <%= f.text_field :quantity, maxlength: 3, size: 3, value: "1" %>
         <% end %>
+        <% if current_admin? %>
+          <%= link_to "Edit", @item, class: "btn btn-success lead-column pull-right", id: "admin-item-btn-1" %>
+          <%= link_to "Delete", item_path(@item), method: :delete, class: "btn btn-danger pull-right", id: "admin-item-btn-2" %>
+        <% end %>
       </div>
     </div>
   </div>
+
 
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
