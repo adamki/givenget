@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'order_item' do
   before do
-    @order = Order.create
+    @order = Order.create(status: "Ordered")
     @item = Item.first
   end
   let(:valid_attributes) {

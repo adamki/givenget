@@ -6,7 +6,14 @@ class ApplicationController < ActionController::Base
   helper_method :cart, :cart_total, :current_user, :current_admin?
 
   def current_user
+    clear_bad_session
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def clear_bad_session
+    if session[:user_id] && !(User.pluck("id").include?(session[:user_id]))
+      session[:user_id] = nil
+    end
   end
 
   def cart

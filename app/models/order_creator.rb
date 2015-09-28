@@ -7,7 +7,8 @@ class OrderCreator
   end
 
   def generate
-    self.cart.each_with_object(Order.create(user: self.user)) do |item, order|
+    order_params = {user: self.user, status: "Ordered"}
+    self.cart.each_with_object(Order.create(order_params)) do |item, order|
       OrderItem.create(order_item_params(item, order))
     end
   end

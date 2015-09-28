@@ -3,6 +3,8 @@ class Order < ActiveRecord::Base
 
   has_many :order_items
   belongs_to :user
+  validates :status, format: { with: /Ordered|Paid|Cancelled|Completed/,
+    message: "Status must be one of Ordered, Paid, Cancelled, Completed" }
 
   def total
     self.reduce(0) { |acc, order_item| acc + (order_item.price * order_item.quantity.to_i) }
