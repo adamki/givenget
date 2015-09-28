@@ -15,7 +15,7 @@ class Order < ActiveRecord::Base
   def each
     self.order_items.each do |order_item|
       item = Item.find(order_item.item_id)
-      display_item = OpenStruct.new(item: item, 
+      display_item = OpenStruct.new(item: item,
                                 quantity: order_item.item_quantity,
                                    price: order_item.item_price)
       yield display_item
