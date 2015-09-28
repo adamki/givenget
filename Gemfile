@@ -20,6 +20,8 @@ gem 'omniauth-twitter'
 gem 'omniauth-identity'
 gem 'bcrypt'
 gem 'paperclip'
+gem 'aws-sdk'
+
 
 group :development, :test do
   gem 'byebug'
