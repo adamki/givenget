@@ -5,8 +5,8 @@ class CreateOrderItems < ActiveRecord::Migration
       t.belongs_to :item, index:true
       t.integer :order_id
       t.integer :item_id
-      t.string :item_price
-      t.string :item_quantity
+      t.integer :item_price
+      t.integer :item_quantity
     end
   end
 end

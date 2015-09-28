@@ -17,7 +17,7 @@ feature "order is created when user checks out" do
       price = item.price
       click_link_or_button("Checkout")
     # Then the order should be placed
-      expect(current_path).to eq(dashboard_path)
+      expect(current_path).to eq(orders_path)
       expect(page).to have_content("Order placed!")
     # And I should see a message "Order was successfully placed"
     # And I should see the order I just placed in a table

@@ -1,13 +1,14 @@
 class OrderCreator
-  attr_reader :cart
+  attr_reader :cart, :user
 
-  def initialize(cart)
+  def initialize(cart, user)
     @cart = cart
+    @user = user
   end
 
   def generate
-    order = cart.each_with_object(Order.create) do |item, order|
-      OrderItem.new(order_item_params(item, order))
+    self.cart.each_with_object(Order.create(user: self.user)) do |item, order|
+      OrderItem.create(order_item_params(item, order))
     end
   end
 
