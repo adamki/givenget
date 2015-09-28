@@ -24,8 +24,4 @@ Rails.application.routes.draw do
   get '/content', to: 'content#index'
   get '/content/:id/edit', to: 'content#edit', as: 'edit_content'
   delete '/content/:id', to: 'content#destroy', as: 'delete_content'
-
-  namespace :admin do
-    resources :orders, only:[:index]
-  end
 end
