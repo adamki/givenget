@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   delete '/content/:id', to: 'content#destroy', as: 'delete_content'
 
   namespace :admin do
-    resources :categories, only: [:index, :show, :destroy, :new, :create]
+    resources :categories, only: [:index, :destroy, :new, :create]
+    resources :items, only: [:destroy, :new, :create, :update]
   end
 end

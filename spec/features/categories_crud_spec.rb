@@ -76,6 +76,11 @@ feature 'Categories restfulness' do
 
     end
 
+    it "does not see link to category index" do
+      visit '/categories/1'
+      expect(page).not_to have_link('Categories Index')
+    end
+
   end
 
   context 'authenticated non-admin user' do
@@ -87,6 +92,12 @@ feature 'Categories restfulness' do
       expect(current_path).to eq('/error'), "only admin should see categories index"
       expect(page).to have_content("You are not authorized to be here :(")
     end
+
+    it "does not see link to category index" do
+      visit '/categories/1'
+      expect(page).not_to have_link('Categories Index')
+    end
+    
   end
 
 end
