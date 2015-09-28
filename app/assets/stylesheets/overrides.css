@@ -31,13 +31,23 @@
 * Cart -- not all may be cart
 *    please verify
 ***************************/
+.cart-header{
+	margin-top: 20px;
+	}
+.outer-cart{
+	/*float: none;*/
+	/*margin: 0 auto;*/
+}
+
+.cart-container{
+	background-color: #F4EDD6;
+	border-radius: 5px;
+}
 
 .cart-checkout-btn{
-	margin: 20px;
 	}
 
 .cart-delete-btn{
-	margin-left: 20px;
 	}
 
 .btn-cart-qty{

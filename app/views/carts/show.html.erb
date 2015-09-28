@@ -1,5 +1,9 @@
-<h1>Shopping Cart</h1>
-
+<div class="container outer-cart">
+<div class="col-md-3"></div>
+<div class="col-md-6 cart-container">
+  <br>
+  <h1 class="cart-header">Shopping Cart</h1>
+  <br>
 <table class="table">
   <tr>
     <th>Title</th>
@@ -11,8 +15,8 @@
   <% cart.each do |item| %>
     <tr id='<%= item.title %>'>
       <td>
+        <%= link_to "x", cart_path(item_id: item.id), method: :put, class: "btn btn-danger btn-xs cart-delete-btn" %>
         <%= link_to item.title, item, class: 'lead-column' %>
-                <%= link_to "x", cart_path(item_id: item.id), method: :put, class: "btn btn-danger btn-xs cart-delete-btn" %> (remove from cart)
       </td>
       <td><%= item.description %></td>
       <td><%= dollar_string(item.price) %></td>
@@ -23,16 +27,23 @@
   <% end %>
   <% if !(cart.empty?) %>
   <tr>
+    <td></td><td></td><td></td><td>
+    <h3>Total: </h3></td>
+    <td><h3><%= dollar_string(cart.total) %></h3></td>
+  </tr>
+  <tr>
     <td></td><td></td><td></td><td></td>
-    <td><%= dollar_string(cart.total) %></td>
+    <td>
+      <% if cart.empty? %>
+        <%= 'You have no items in your cart' if cart.empty? %>
+      <% else %>
+        <%= link_to "Checkout", orders_path, class: "btn-primary btn cart-checkout-btn" %>
+      <% end %>
+    </td>
   </tr>
   <% end %>
 </table>
 
-<% if cart.empty? %>
-  <%= 'You have no items in your cart' if cart.empty? %>
-<% else %>
-  <!-- <h3>Total: <%= @total %></h3> -->
-  <h3>Total: <%= dollar_string(cart.total) %></h3>
-  <%= link_to "Checkout", orders_path, class: "btn-primary btn cart-checkout-btn" %>
-<% end %>
+<div class="col-md-3"></div>
+</div>
+</div>
