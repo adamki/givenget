@@ -107,7 +107,9 @@
 }
 
 .homepage-thumbnail-pic {
-  max-height: 150px; height: 150px; overflow: hidden;
+  max-height: 150px;
+  height: 150px;
+  overflow: hidden;
 }
 
 .home-first-topic {
