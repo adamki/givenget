@@ -6,6 +6,7 @@ class CartsController < ApplicationController
   def create
   	item_id = params[:cart][:item]
   	cart_items_session[item_id] = params[:cart][:quantity] if params[:cart][:quantity] != ""
+    flash.notice = "Item added to cart!"
     cart
   	redirect_to '/items'
   end
