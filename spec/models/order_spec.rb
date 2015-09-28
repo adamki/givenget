@@ -14,6 +14,4 @@ describe 'order' do
     order.status = "paid"
     expect(order).to_not be_valid
   end
-
-
 end
