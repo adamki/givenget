@@ -34,5 +34,5 @@
 <% else %>
   <!-- <h3>Total: <%= @total %></h3> -->
   <h3>Total: <%= dollar_string(cart.total) %></h3>
-  <%= link_to "Checkout", items_path, class: "btn-primary btn cart-checkout-btn" %>
+  <%= link_to "Checkout", orders_path, class: "btn-primary btn cart-checkout-btn" %>
 <% end %>

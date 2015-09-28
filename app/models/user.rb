@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :orders
   validates :uid, :name, :provider, presence: true
   validates :uid, uniqueness: true
 

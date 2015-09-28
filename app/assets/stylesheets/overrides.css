@@ -169,3 +169,12 @@ img.envelope{
 	margin: 15px;
 	}
 
+/*************************
+* Main Layout
+**************************/
+.flash-banner{
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	}
+
