@@ -145,7 +145,7 @@ img.envelope{
 .lead-column{
 	color: black;
 	font-weight: bold;
-	font-size: 1.25em; 
+	font-size: 1.25em;
 	}
 
 .index-cart-btn {
@@ -178,3 +178,48 @@ img.envelope{
 	font-weight: bold;
 	}
 
+  /*************************
+  * Error
+  *************************/
+
+  .error-flash {
+    color: #E2493C;
+    background-color: #F4EDD6;
+    font-size: 3em;
+    font-weight: bolder;
+    margin-bottom: 50px;
+  }
+
+  .error-flash img {
+    width: 90%;
+    margin-bottom: 50px;
+
+    /*************************
+    * Admin
+    *************************/
+  }
+#admin-item-btn {
+  color: white;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+#admin-item-btn-1 {
+  margin-top: -35px;
+  height: 35px;
+  color: white;
+  font-weight: 400;
+  margin-right: 75px;
+  font-size: 1.1em;
+}
+
+#admin-item-btn-2 {
+  margin-top: -35px;
+  height: 35px;
+
+}
+
+.visible-check {
+  margin-bottom: 10px;
+}
+>>>>>>> origin/admin-functionality

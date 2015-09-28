@@ -42,14 +42,3 @@ content = Content.create([
        }
 
        ])
-
-
-
-
-
-
-
-
-
-
-

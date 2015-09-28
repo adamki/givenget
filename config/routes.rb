@@ -1,21 +1,27 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
-  resources :items, only:[:index, :show, :new]
-  resources :carts, only:[:create]
-  resources :items
-  resources :categories, only:[:index, :show, :destroy, :new, :create]
-  resources :orders, only:[:index]
+  
+  get '/give', to: 'welcome#give'
+  get '/about', to: 'welcome#about'
 
+  resources :items, only:[:index, :show]
+
+  resources :carts, only:[:create]
   put '/cart', to: 'carts#update'
   get '/cart', to: 'carts#show'
-  get '/give', to: 'welcome#give'
+
+  resources :categories, only:[:show]
+
+  resources :orders, only:[:index]
+
   get '/signin_or_signup', to: 'sessions#new'
-  get '/new_account', to: 'identities#new'
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   get '/auth/failure', to: 'sessions#new'
   get '/dashboard', to: 'sessions#show'
   delete '/logout', to: 'sessions#destroy'
-  get '/about', to: 'welcome#about'
+  get '/error', to: 'sessions#error'
+
+  get '/new_account', to: 'identities#new'
 
   #content routes - manually done b/c no singular/plural distinction
   get '/content/new', to: 'content#new'
@@ -24,4 +30,9 @@ Rails.application.routes.draw do
   get '/content', to: 'content#index'
   get '/content/:id/edit', to: 'content#edit', as: 'edit_content'
   delete '/content/:id', to: 'content#destroy', as: 'delete_content'
+
+  namespace :admin do
+    resources :categories, only: [:index, :destroy, :new, :create]
+    resources :items, only: [:destroy, :new, :create, :update, :edit]
+  end
 end
