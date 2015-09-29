@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   def index
     order_creator = OrderCreator.new(cart, current_user)
     if order_creator.generate
+      cart.clear
       flash.notice = "Order placed!"
       redirect_to dashboard_path
     else
