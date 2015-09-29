@@ -32,12 +32,20 @@ class SessionsController < ApplicationController
   end
 
   def dashboard_or_prev
-    process_redirect || dashboard_path
+    process_redirect || find_dashboard_path
   end
 
   def process_redirect
     path = session[:redirect]
     session.delete(:redirect)
     path
+  end
+
+  def find_dashboard_path
+    if current_admin?
+      admin_dashboard_path
+    else
+      dashboard_path
+    end
   end
 end
