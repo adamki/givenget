@@ -4,26 +4,29 @@ require 'rails_helper'
 
     before :each do
       login_admin!
+      visit '/admin/items'
     end
 
     it 'can view item list' do
-      visit '/items'
       expect(page).to have_link("Delete")
       expect(page).to have_link("Create New Item")
       expect(page).to have_link("Edit")
     end
 
     it 'can view an individual item' do
-      visit '/items'
       item = Item.find_by(title: 'pencil')
       click_on "pencil"
+
       expect(current_path).to eq(item_path(item))
       expect(page).to have_link("Delete")
       expect(page).to have_link("Edit")
+
+      click_on "Back To Admin Items"
+
+      expect(current_path).to eq('/admin/items')
     end
 
     it 'can edit an item' do
-      visit '/items'
       item = Item.find_by(title: 'internet')
 
       within('.internet') do
@@ -36,7 +39,7 @@ require 'rails_helper'
       fill_in "item_price", with: "9999"
       click_on "Update Item"
 
-      expect(current_path).to eq('/items')
+      expect(current_path).to eq('/admin/items')
       within('.table') do
         expect(page).to have_content('test item')
         within('.test') do
