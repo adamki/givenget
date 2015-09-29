@@ -38,11 +38,16 @@ RSpec.configure do |config|
     })
 
     def login_admin!
+      #creates user as admin
       visit signin_or_signup_path
       click_on "twitter-link"
+      click_on "Logout"
       user = User.last
       user.role = "admin"
       user.save
+      #then signs in again now that they are admin
+      visit signin_or_signup_path
+      click_on "twitter-link"
     end
 
     def admin_logout!

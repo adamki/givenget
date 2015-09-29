@@ -9,7 +9,11 @@ class SessionsController < ApplicationController
     user = User.find_or_create_from_auth_hash(auth_hash)
     session[:user_id] = user.id
     flash[:notice] = "Login successful"
-    redirect_to dashboard_or_prev
+    if current_admin?
+      redirect_to admin_dashboard_path
+    else
+      redirect_to dashboard_or_prev
+    end
   end
 
   def show

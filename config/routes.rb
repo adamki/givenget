@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
-  
+
   get '/give', to: 'welcome#give'
   get '/about', to: 'welcome#about'
 
@@ -34,5 +34,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories, only: [:index, :destroy, :new, :create]
     resources :items, only: [:destroy, :new, :create, :update, :edit]
+    resources :orders, only: [:index, :edit, :update, :show]
+    get '/dashboard', to: 'sessions#show'
   end
 end
