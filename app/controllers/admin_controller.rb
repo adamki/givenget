@@ -6,7 +6,7 @@ class AdminController < ApplicationController
   def verify_admin
     unless current_admin?
       flash[:error] = "You are not authorized to be here :("
-      redirect_to error_path
+      redirect_to error_path status: 403
     end
   end
 end
