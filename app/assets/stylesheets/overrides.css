@@ -269,13 +269,19 @@ img.envelope{
   width: 25%;
 }
 
+.checkout-spacer{
+  margin-top: 20px;
+}
 .checkout-actions{
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.checkout-button{
-  margin-top: 10px;
+.to-payment-button{
   margin-bottom: 10px;
 }
+
+.checkout-1-pymt-msg {
+  margin-bottom: 30px;
+  }
 
