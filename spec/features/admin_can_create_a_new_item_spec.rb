@@ -31,7 +31,10 @@ require 'rails_helper'
         click_link "Edit"
       end
       fill_in "Title", with: "New Test Item"
+      fill_in "Description", with: "New Test Description"
+
       click_button "Update Item"
+      save_and_open_page
       expect(page).to have_content("New Test Item")
     end
   end
