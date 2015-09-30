@@ -42,7 +42,7 @@ require 'rails_helper'
       expect(current_path).to eq('/admin/items')
       within('.table') do
         expect(page).to have_content('test item')
-        within('.test') do
+        within('.test-item') do
           expect(page).to have_content('$99.99')
         end
       end
