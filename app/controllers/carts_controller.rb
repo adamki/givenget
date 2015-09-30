@@ -4,9 +4,7 @@ class CartsController < ApplicationController
   end
 
   def create
-  	item_id = params[:cart][:item]
-  	cart_items_session[item_id] = params[:cart][:quantity] if params[:cart][:quantity] != ""
-    flash.notice = "Item added to cart!"
+    quantity_check
     cart
   	redirect_to '/items'
   end
@@ -17,6 +15,17 @@ class CartsController < ApplicationController
   end
 
   private
+
+  def quantity_check 
+    item_id = params[:cart][:item]
+    if params[:cart][:quantity].to_i > 0
+      cart_items_session[item_id] = params[:cart][:quantity]
+      flash.notice = "Item added to cart!" 
+    else
+      flash.notice = "Invalid Quantity! :(" 
+    end
+  end
+
   def cart_session
   	session[:cart] ||= {}
   end

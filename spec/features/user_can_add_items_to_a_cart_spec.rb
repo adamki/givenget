@@ -32,4 +32,15 @@ feature 'user can add items to a cart' do
       visit '/cart'
       expect(page).to have_content("You have no items in your cart")
   end
+
+  it 'user cannot add a negative quantity to the cart' do
+    visit '/items'
+      within('#pencil') do
+        fill_in("Qty:", with: "-47")
+        click_on "Add to Cart"
+        expect(current_path).to eq('/items')
+      end
+      visit '/cart'
+      expect(page).to have_content("You have no items in your cart")
+    end
 end
