@@ -11,4 +11,8 @@ class WelcomeController < ApplicationController
     render :give
   end
 
+  def contact
+
+  end
+
 end
