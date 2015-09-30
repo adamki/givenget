@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
   end
 
   def show
-    @orders = 
   end
 
   def destroy

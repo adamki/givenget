@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :categories, only:[:show]
 
-  resources :orders, only:[:index]
+  resources :orders, only:[:index, :show]
 
   get '/signin_or_signup', to: 'sessions#new'
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
