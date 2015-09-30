@@ -40,7 +40,7 @@ feature 'Categories restfulness' do
       expect(current_path).to eq(admin_categories_path)
     end
 
-    it "can edit categories" do
+    xit "can edit categories" do
       Category.all.each do |cat|
         expect(page).to have_link("Edit", edit_admin_category_path(cat))
       end
