@@ -20,7 +20,6 @@ gem 'omniauth-twitter'
 gem 'omniauth-identity'
 gem 'bcrypt'
 gem 'paperclip'
-gem "figaro"
 gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
