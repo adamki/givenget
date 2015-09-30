@@ -1,6 +1,6 @@
 <div class="container outer-cart">
-<div class="col-md-3"></div>
-<div class="col-md-6 cart-container">
+<div class="col-md-2"></div>
+<div class="col-md-8 cart-container">
   <br>
   <h1 class="cart-header">Shopping Cart</h1>
   <br>
@@ -26,23 +26,25 @@
   <% end %>
   <% if !(cart.empty?) %>
   <tr>
-    <td></td><td></td><td></td><td>
+    <td></td>
+    <td></td>
+    <td></td><td>
     <h3>Total: </h3></td>
     <td><h3><%= dollar_string(cart.total) %></h3></td>
   </tr>
+
+</table>
   <% end %>
-  <tr>
-    <td>
-      <%= 'You have no items in your cart' if cart.empty? %>
-    </td><td></td><td></td><td></td>
-    <td>
+    <%= 'You have no items in your cart' if cart.empty? %>
+    <div class="text-right">
       <% if !(cart.empty?) %>
         <%= link_to "Checkout", new_checkout_path, class: "btn-primary btn cart-checkout-btn" %>
       <% end %>
-    </td>
-  </tr>
-</table>
+    </div>
+    <div class="text-right cart-payment-message">(You may request financial assistance during checkout)
+    </div>
+  </div>
+</div>
+<div class="col-md-2"></div>
 
-<div class="col-md-3"></div>
-</div>
-</div>
+

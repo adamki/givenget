@@ -1,6 +1,7 @@
 <div class="col-md-3"></div>
 <div class="col-md-6 container" id="create-account-container">
-  <h1 class="text-center">Checkout</h1>
+  <h1 class="text-center">Checkout - 1 of 2</h1>
+  <h3 class="text-center">Provide or Confirm Shipping Address</h3>
 
   <%= form_tag checkouts_path, :method=>'post', :class=>"form-inline" do %>
     <div class="form-group" id="full-name-field">
@@ -28,7 +29,8 @@
       <%= text_field_tag :zip, current_user.try(:address).try(:zip), maxlength: 13, size: 13 %>
     </div>
     <div class="actions checkout-actions">
-      <%= submit_tag "Place Order", class: "login-button btn-right checkout-button" %>
+        (You may request financial assistance on next screen)
+      <%= submit_tag "Proceed to Payment", class: "login-button btn-right checkout-button" %>
     </div>
   <% end %>
     </div>

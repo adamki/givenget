@@ -4,6 +4,7 @@ feature 'checkout' do
   before do
     fill_cart
   end
+  
   it 'requires a mailing address on checkout' do
     click_link_or_button('Checkout')
     expect(current_path).to eq('/checkouts/new')

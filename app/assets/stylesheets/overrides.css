@@ -97,6 +97,16 @@
 	text-decoration: none;
 }
 
+.cart-payment-message{
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+
+.cart-checkout-btn{
+  margin-bottom: 25px;
+  margin-right: 50px;
+}
+
 /*************************
 * Give
 **************************/
@@ -263,7 +273,9 @@ img.envelope{
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 .checkout-button{
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
