@@ -40,13 +40,19 @@ feature 'Categories restfulness' do
       expect(current_path).to eq(admin_categories_path)
     end
 
-    xit "can edit categories" do
+    it "can edit categories" do
       Category.all.each do |cat|
         expect(page).to have_link("Edit", edit_admin_category_path(cat))
       end
-      cat_count = Category.count
-      first(:link, "Delete").click
-      expect(Category.count).to eq(cat_count - 1)
+      category = Category.first
+      cat_title = category.title
+      expect(page).to have_link(cat_title)
+      first(:link, "Edit").click
+      expect(current_path).to eq(edit_admin_category_path(category))
+      fill_in "category_title", with: "juju"
+      click_on("Update Category")
+      expect(page).to_not have_link(cat_title)
+      expect(page).to have_link("juju")
     end
 
     it "can delete categories" do

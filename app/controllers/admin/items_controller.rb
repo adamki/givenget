@@ -15,6 +15,7 @@ class Admin::ItemsController < AdminController
     if @item.update(item_params)
       redirect_to admin_items_path
     else
+      flash[:notice] = @item.errors.full_messages.join(", ")
       render :edit
     end
   end
