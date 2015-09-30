@@ -7,7 +7,7 @@
       <h2>Categories</h2>
       <div class="list-group">
         <% @categories.each do |cat| %>
-          <%= link_to cat.title, cat, class: "list-group-item cat-button" %>
+          <%= link_to cat.title, category_path(cat.slug), class: "list-group-item cat-button" %>
         <% end %>
       </div>
     </div>

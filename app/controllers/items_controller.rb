@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 
+  before_action :load_item, only: [:show, :edit, :update, :destroy]
+
   def new
     @item = Item.new
   end
@@ -20,16 +22,13 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @categories = @item.categories
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to items_path
     else
@@ -38,7 +37,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.delete
     redirect_to items_path
   end
@@ -47,5 +45,9 @@ class ItemsController < ApplicationController
 
     def item_params
       params.require(:item).permit(:title, :description, :price)
+    end
+
+    def load_item
+      @item = Item.find_by(slug: params[:slug])
     end
 end

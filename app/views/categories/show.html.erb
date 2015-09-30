@@ -8,7 +8,7 @@
         Items
       </span>
       <% @category.items.each do |item| %>
-        <%= link_to item.title, item, class: "list-group-item" %>
+        <%= link_to item.title, item_path(item.slug), class: "list-group-item" %>
       <% end %>
     </div>
   </div>

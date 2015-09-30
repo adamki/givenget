@@ -11,8 +11,8 @@ feature 'categories in items view' do
 
   it "displays an item's categories in individual view" do
     item = Item.first
-    visit item_path(item)
-    expect(current_path).to eq(item_path(item))
+    visit item_path(item.slug)
+    expect(current_path).to eq(item_path(item.slug))
     item.categories.each do |cat|
       expect(page).to have_content(cat.title)
     end

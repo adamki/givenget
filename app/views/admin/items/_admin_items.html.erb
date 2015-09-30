@@ -21,14 +21,14 @@
         <%= check_box item , item.visible?, {class: "visible-check"}, true, false %>
       </td>
       <td>
-        <%= link_to item.title, item, class: "lead-column" %>
+        <%= link_to item.title, item_path(item.slug), class: "lead-column" %>
       </td>
       <td>
         <%= link_to dollar_string(item.price), item, class: "lead-column" %>
       </td>
       <td>
         <%= link_to "Edit", edit_admin_item_path(item), class: "btn btn-success lead-column",id: "admin-item-btn"  %>
-        <%= link_to item_path(item), method: :delete, class: "btn btn-danger" do %>
+        <%= link_to admin_item_path(item), method: :delete, class: "btn btn-danger" do %>
           Delete
         <% end %>
       </td>

@@ -17,7 +17,7 @@ require 'rails_helper'
       item = Item.find_by(title: 'pencil')
       click_on "pencil"
 
-      expect(current_path).to eq(item_path(item))
+      expect(current_path).to eq(item_path(item.slug))
       expect(page).to have_link("Delete")
       expect(page).to have_link("Edit")
 
