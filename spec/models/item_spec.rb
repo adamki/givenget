@@ -3,17 +3,17 @@ require 'rails_helper'
 describe 'item' do
   context 'with valid attributes' do
 
-  let(:attributes){{title: 'pencil',
-                    description: 'bulk pencils',
-                    price: 1020,
+  let(:attributes){{title: 'completelydifferentpencil',
+                    description: 'totally different bulk pencils',
+                    price: 1021,
                     image: 'https://pencil-outlet.com',
                     categories: [Category.first]}}
 
     it 'is valid with valid attributes' do
       item = Item.new(attributes)
-      expect(item.title).to eq('pencil')
-      expect(item.description).to eq('bulk pencils')
-      expect(item.price).to eq(1020)
+      expect(item.title).to eq('completelydifferentpencil')
+      expect(item.description).to eq('totally different bulk pencils')
+      expect(item.price).to eq(1021)
       expect(item.image).to eq('https://pencil-outlet.com')
       expect(item).to be_valid
     end
@@ -22,16 +22,16 @@ describe 'item' do
 
   context 'with invalid attributes' do
 
-    let(:attributes){{title: 'pencil',
-                      description: 'bulk pencils',
-                      price: 1020,
+    let(:attributes){{title: 'completelydifferentpencil',
+                      description: 'totally different bulk pencils',
+                      price: 1021,
                       image: 'https://pencil-outlet.com',
                       categories: [Category.first]}}
 
-    let(:without_category){{title: 'pencil',
-                            description: 'bulk pencils',
-                            price: 1020,
-                            image: 'https://pencil-outlet.com'}}
+    let(:without_category){{title: 'completelydifferentpencil',
+                      description: 'totally different bulk pencils',
+                      price: 1021,
+                      image: 'https://pencil-outlet.com'}}
 
     it 'requires title attributes' do
       item = Item.new(attributes)

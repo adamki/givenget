@@ -32,12 +32,21 @@ feature 'Categories restfulness' do
       cat = Category.first
       expect(page).to have_link(cat.title, cat)
       click_link(cat.title, cat)
-      expect(current_path).to eq(category_path(cat))
+      expect(current_path).to eq(category_path(cat.slug))
       cat.items.each do |item|
         expect(page).to have_link(item.title, item)
       end
       click_on "Categories Index"
       expect(current_path).to eq(admin_categories_path)
+    end
+
+    xit "can edit categories" do
+      Category.all.each do |cat|
+        expect(page).to have_link("Edit", edit_admin_category_path(cat))
+      end
+      cat_count = Category.count
+      first(:link, "Delete").click
+      expect(Category.count).to eq(cat_count - 1)
     end
 
     it "can delete categories" do
@@ -61,7 +70,7 @@ feature 'Categories restfulness' do
       end
       test_item = Category.first.items.first
       first(:link, test_item.title).click
-      expect(current_path).to eq(item_path(test_item))
+      expect(current_path).to eq(item_path(test_item.slug))
 
     end
   end
@@ -77,7 +86,7 @@ feature 'Categories restfulness' do
     end
 
     it "does not see link to category index" do
-      visit '/categories/1'
+      visit '/categories/business'
       expect(page).not_to have_link('Categories Index')
     end
 
@@ -94,10 +103,10 @@ feature 'Categories restfulness' do
     end
 
     it "does not see link to category index" do
-      visit '/categories/1'
+      visit '/categories/education'
       expect(page).not_to have_link('Categories Index')
     end
-    
+
   end
 
 end

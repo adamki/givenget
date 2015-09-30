@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   get '/give', to: 'welcome#give'
   get '/about', to: 'welcome#about'
 
-  resources :items, only:[:index, :show]
+  resources :items, only:[:index, :show], param: :slug
 
   resources :carts, only:[:create]
   put '/cart', to: 'carts#update'
   get '/cart', to: 'carts#show'
 
-  resources :categories, only:[:show]
+  resources :categories, only:[:show], param: :slug
 
   resources :orders, only:[:index, :show]
 

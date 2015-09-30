@@ -38,7 +38,7 @@
             <%= dollar_string(item.price) %>
           </h4>
           <h4>
-            <%= link_to item.title, item %>
+            <%= link_to item.title, item_path(item.slug) %>
           </h4>
           <p class="item-description">
             <%= item.description %>

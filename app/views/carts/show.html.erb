@@ -16,7 +16,7 @@
     <tr id='<%= item.title %>'>
       <td>
         <%= link_to "x", cart_path(item_id: item.id), method: :put, class: "btn btn-danger btn-xs cart-delete-btn" %>
-        <%= link_to item.title, item, class: 'lead-column' %>
+        <%= link_to item.title, item_path(item.slug), class: 'lead-column' %>
       </td>
       <td><%= item.description %></td>
       <td><%= dollar_string(item.price) %></td>

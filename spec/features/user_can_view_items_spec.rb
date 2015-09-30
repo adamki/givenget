@@ -13,7 +13,7 @@ feature 'user can view an item' do
       visit '/items'
       click_link('internet')
       item = Item.find_by(title: 'internet')
-      expect(current_path).to eq(item_path(item))
+      expect(current_path).to eq(item_path(item.slug  ))
       expect(page).to have_content('not worth the price')
       expect(page).to have_content('$60.16')
     end
