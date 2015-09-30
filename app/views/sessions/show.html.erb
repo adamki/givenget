@@ -46,12 +46,24 @@
           Item or Service
         </th>
         <th>
-          Qty
-        </th>
-        <th>
-          Cost
+          Order
         </th>
       </tr>
+      <% current_user.orders.each do |order| %>
+        <% order.each do |oi| %>
+        <tr>
+          <td class="text-left">
+            <%= to_short(order.created_at) %>
+          </td>
+          <td class="text-left">
+            <%= oi.item.title %>
+          </td>
+          <td class="text-left">
+            <%= link_to "Order #{order.id}", order_path(order) %>
+          </td>
+        </tr>
+        <% end %>
+      <% end %>
     </table>
   </div>
 </div>

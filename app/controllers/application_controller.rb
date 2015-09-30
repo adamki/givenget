@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :cart, :cart_total, :current_user, :current_admin?
+  helper_method :cart, :cart_total, :current_user, :current_admin?, :to_short
 
   def current_user
     clear_bad_session
@@ -27,4 +27,9 @@ class ApplicationController < ActionController::Base
   def current_admin?
     current_user && current_user.role == "admin"
   end
+
+  def to_short(date)
+    date.strftime(format='%-m/%-d/%-y')
+  end
+
 end

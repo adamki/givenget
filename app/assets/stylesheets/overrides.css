@@ -73,7 +73,11 @@
 	color:  #BED7C1;
 	margin-top: 13px;
 	font-size: 200%;
+  cursor: pointer;
 }
+
+#cart {
+  }
 
 #email {
 	color: #6FB893;

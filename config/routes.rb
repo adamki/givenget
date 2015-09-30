@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
-  
+
   get '/give', to: 'welcome#give'
   get '/about', to: 'welcome#about'
 
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :categories, only:[:show]
 
-  resources :orders, only:[:index]
+  resources :orders, only:[:index, :show]
 
   get '/signin_or_signup', to: 'sessions#new'
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories, only: [:index, :destroy, :new, :create]
-    resources :items, only: [:destroy, :new, :create, :update, :edit]
+    resources :items, only: [:index, :destroy, :new, :create, :update, :edit]
+    resources :orders, only: [:index, :edit, :update, :show]
+    get '/dashboard', to: 'sessions#show'
   end
 end
