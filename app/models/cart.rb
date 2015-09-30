@@ -23,6 +23,10 @@ class Cart
     end
   end
 
+  def create_cart_item
+    
+  end
+
   def increment(item_id)
     item = Item.find(item_id)
     self.cart_data[item.id.to_s] = self.cart_data[item.id.to_s].to_i + 1
