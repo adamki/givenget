@@ -1,7 +1,8 @@
 require 'rails_helper'
 
   describe 'admin item functions' do
-    let(:test_item){Item.create( title: "Test Item", description: "Test Description", price: 100) }
+    let(:category){Category.create(title: "candies")}
+    let!(:test_item){Item.create( title: "Test Item", description: "Test Description", price: 100, categories: [category])}
 
     xit 'can create a new item ' do
       visit '/items/new'
@@ -14,7 +15,6 @@ require 'rails_helper'
     end
 
     xit 'can delete an existing item' do
-      test_item
       visit items_path
       expect(page).to have_content("Test Item")
       click_link "Test Item"
@@ -24,12 +24,15 @@ require 'rails_helper'
       expect(page).not_to have_content("Test Item")
     end
 
-    xit 'can edit an existing item' do
-      test_item
-      visit items_path
-      click_link "Test Item"
-      click_link "Edit"
+    it 'can edit an existing item' do
+      login_admin!
+      visit admin_items_path
+      within(".test-item") do
+        click_link "Edit"
+      end
       fill_in "Title", with: "New Test Item"
+      fill_in "Description", with: "New Test Description"
+
       click_button "Update Item"
       expect(page).to have_content("New Test Item")
     end

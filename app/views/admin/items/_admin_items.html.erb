@@ -16,7 +16,7 @@
     </th>
   </tr>
   <% @items.each do |item| %>
-    <tr class="<%=item.title%>">
+    <tr class="<%=item.title.parameterize%>">
       <td>
         <%= check_box item , item.visible?, {class: "visible-check"}, true, false %>
       </td>
