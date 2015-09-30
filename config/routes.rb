@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/give', to: 'welcome#give'
   get '/about', to: 'welcome#about'
+  get '/contact', to: "welcome#contact"
 
   resources :items, only:[:index, :show], param: :slug
 
