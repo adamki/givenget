@@ -34,7 +34,6 @@ require 'rails_helper'
       fill_in "Description", with: "New Test Description"
 
       click_button "Update Item"
-      save_and_open_page
       expect(page).to have_content("New Test Item")
     end
   end
