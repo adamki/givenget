@@ -37,6 +37,10 @@ class Cart
     end
   end
 
+  def clear
+    self.each { |item| self.remove(item.id.to_s) }
+  end
+
   def remove(item_id)
     self.cart_data.delete(item_id)
   end

@@ -1,0 +1,30 @@
+<div class="container outer-cart">
+<div class="col-md-3"></div>
+<div class="col-md-6 cart-container">
+  <br>
+  <h1 class="cart-header">Order <%= @order.id %></h1>
+  <br>
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>Brief Description</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Subtotal</th>
+  </tr>
+  <% @order.each do |order_item| %>
+    <tr id='<%= order_item.item.title %>'>
+      <td>
+        <%= link_to order_item.item.title, order_item.item, class: 'lead-column' %>
+      </td>
+      <td><%= order_item.item.description %></td>
+      <td><%= dollar_string(order_item.price) %></td>
+      <td><%= order_item.quantity %></td>
+      <td><%= dollar_string(order_item.subtotal) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="col-md-3"></div>
+</div>
+</div>
