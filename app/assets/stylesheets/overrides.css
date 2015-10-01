@@ -217,6 +217,10 @@ img.envelope{
       border-radius: 10px;
   }
 
+  .btn-space {
+    margin-bottom: 50px;
+  }
+
   .btn-left:hover {
       color: blue;
       background-color: #F4EDD6;
