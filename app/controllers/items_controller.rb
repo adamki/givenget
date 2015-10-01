@@ -49,5 +49,6 @@ class ItemsController < ApplicationController
 
     def load_item
       @item = Item.find_by(slug: params[:slug])
+      render_404("Item not found") if !@item
     end
 end
