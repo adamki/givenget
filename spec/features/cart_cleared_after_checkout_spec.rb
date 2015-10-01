@@ -2,17 +2,14 @@ require 'rails_helper'
 
 feature 'Cart cleared after checkout' do
   before do
-    visit '/signin_or_signup'
-    click_link_or_button("twitter-link")
-    visit '/items'
-    click_link_or_button('pencil')
-    click_link_or_button("Add to Cart")
-    visit '/cart'
-    expect(page).to have_content("pencil")
+    fill_cart
   end
 
   it 'clears the cart' do
+    expect(page).to have_content("pencil")
     click_link_or_button("Checkout")
+    click_link_or_button("Proceed to Payment")
+    click_link_or_button("Place Order")
     visit '/cart'
     expect(page).to have_content('You have no items in your cart')
   end

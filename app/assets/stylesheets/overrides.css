@@ -97,6 +97,16 @@
 	text-decoration: none;
 }
 
+.cart-payment-message{
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+
+.cart-checkout-btn{
+  margin-bottom: 25px;
+  margin-right: 50px;
+}
+
 /*************************
 * Give
 **************************/
@@ -231,7 +241,6 @@ img.envelope{
 #admin-item-btn-2 {
   margin-top: -35px;
   height: 35px;
-
 }
 
 .visible-check {
@@ -244,4 +253,47 @@ img.envelope{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+}
+/************************
+* Checkout
+************************/
+#full-name-field{
+  width: 100%;
+}
+#address-1-field{
+  width: 100%;
+}
+#address-2-field{
+  width: 100%;
+}
+#city-field{
+  width: 30%;
+}
+#state-field{
+  width: 10%;
+}
+#zip-field{
+  width: 25%;
+}
+
+.checkout-spacer{
+  margin-top: 20px;
+}
+.checkout-actions{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.to-payment-button{
+  margin-bottom: 10px;
+}
+
+.checkout-1-pymt-msg {
+  margin-bottom: 30px;
+  }
+/***********************
+* Admin Orders
+************************/
+.ord-status-btn{
+  margin-right: 8px;
 }

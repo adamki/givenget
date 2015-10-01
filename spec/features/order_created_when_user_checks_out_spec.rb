@@ -16,6 +16,8 @@ feature "order is created when user checks out" do
       item = Item.first
       price = item.price
       click_link_or_button("Checkout")
+      click_link_or_button("Proceed to Payment")
+      click_link_or_button("Place Order")
       expect(current_path).to eq(dashboard_path)
       expect(page).to have_content("Order placed!")
     end
@@ -42,6 +44,8 @@ feature "order is created when user checks out" do
       expect(current_path).to eq(cart_path)
       expect(page).to have_content("Login successful")
       click_link_or_button('Checkout')
+      click_link_or_button("Proceed to Payment")
+      click_link_or_button("Place Order")
       expect(current_path).to eq(dashboard_path)
       expect(page).to have_content("Order placed")
     end
