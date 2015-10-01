@@ -498,3 +498,7 @@ img.envelope{
   background-color: #F4EDD6;
   border-radius: 5px;
 }
+
+#create-account-link {
+  margin-top: -30px;
+}
