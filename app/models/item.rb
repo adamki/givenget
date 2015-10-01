@@ -6,7 +6,11 @@ class Item < ActiveRecord::Base
   has_many :order_items
   before_save :set_slug
 
-  has_attached_file :picture, styles: {large: "500x300>", medium: "700x700>", thumb: "100x100>" }, bucket: 'give-n-get'
+  has_attached_file :picture,
+                    styles: {large: "500x300>",
+                             medium: "700x700>",
+                             thumb: "100x100>" },
+                    bucket: 'give-n-get'
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
 
   private

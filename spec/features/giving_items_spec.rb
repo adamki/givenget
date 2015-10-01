@@ -37,7 +37,7 @@ feature 'can give items' do
         expect(page).to have_content("Test Give")
         expect(page).to have_content("Test Give Description")
         expect(page).to have_content("32")
-        expect(page).to have_content("Pending")
+        expect(page).to have_content("pending")
       end
     end
   end

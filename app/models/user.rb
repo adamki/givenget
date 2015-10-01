@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :orders
+  has_many :gives, class_name: "Give",
+                   foreign_key: "user_id"
   validates :uid, :name, :provider, presence: true
   validates :uid, uniqueness: true
 
