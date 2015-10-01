@@ -2,7 +2,9 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by(slug: params[:slug])
-    # need action for non-existent category
+    if !@category
+      render_404("Category not found")
+    end
   end
 
 end
