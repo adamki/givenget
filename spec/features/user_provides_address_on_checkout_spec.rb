@@ -21,7 +21,7 @@ feature 'checkout' do
     fill_in 'Address Second Line', with: address.add_2
     fill_in 'City', with: address.city
     fill_in 'State', with: address.state
-    fill_in 'Zip', with: address.state
+    fill_in 'Zip', with: address.zip
     expect(page).to have_content("You may request financial assistance on next screen")
     click_button("Proceed to Payment")
     expect(current_path).to eq('/checkouts/confirm')
