@@ -351,6 +351,13 @@ img.envelope{
   margin-bottom: 10px;
 }
 
+#item-view-preview {
+  max-width: 100%;
+  height: 185px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
 /************************
 * Checkout
 ************************/
@@ -394,4 +401,3 @@ img.envelope{
 .ord-status-btn{
   margin-right: 8px;
 }
-
