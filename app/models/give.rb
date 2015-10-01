@@ -1,22 +1,14 @@
-class Item < ActiveRecord::Base
+class Give < ActiveRecord::Base
+  belongs_to :user
   validates :title, :description, :price, presence: :true
   validates :title, uniqueness: true
-  validates :categories, presence: :true
-  has_and_belongs_to_many :categories
-  has_many :order_items
-  before_save :set_slug
 
   has_attached_file :picture,
                     styles: {large: "500x300>",
                              medium: "700x700>",
                              thumb: "100x100>" },
                     bucket: 'give-n-get'
+
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
-
-  private
-
-  def set_slug
-    self.slug = title.parameterize
-  end
 
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/about', to: 'welcome#about'
   get '/contact', to: "welcome#contact"
 
+  resources :gives, only:[:new, :create]
   resources :checkouts, only:[:new, :create]
   get '/checkouts/confirm', to: 'checkouts#confirm'
 

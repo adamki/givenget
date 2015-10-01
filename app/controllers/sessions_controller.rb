@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
   end
 
   def show
+    @gives = current_user.gives
   end
 
   def destroy

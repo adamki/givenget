@@ -32,4 +32,12 @@ class ApplicationController < ActionController::Base
     date.strftime(format='%-m/%-d/%-y')
   end
 
+  def verify_logged_in
+    if !current_user
+      session[:redirect] = request.referrer
+      flash.notice = "Please Sign In or Create an Account Before Continuing"
+      redirect_to signin_or_signup_path
+    end
+  end
+
 end

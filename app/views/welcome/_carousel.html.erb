@@ -42,9 +42,15 @@
 <div class="main-text hidden-xs">
   <div class="col-md-2">
   </div>
-  <div class="home-slogan col-md-8 text-center">
-    <h1>Give what you can. Get what you need.</h1>
-  </div>
+  <% if flash.notice %>
+    <div class="home-slogan-notice col-md-8 text-center">
+      <h1>Give what you can. Get what you need.</h1>
+    </div>
+  <% else %>
+    <div class="home-slogan col-md-8 text-center">
+      <h1>Give what you can. Get what you need.</h1>
+    </div>
+  <% end %>
   <div class="col-md-2">
   </div>
   <div class="col-md-12 row">
