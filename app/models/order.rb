@@ -19,7 +19,8 @@ class Order < ActiveRecord::Base
       item = Item.find(order_item.item_id)
       display_item = OpenStruct.new(item: item,
                                 quantity: order_item.item_quantity,
-                                   price: order_item.item_price)
+                                   price: order_item.item_price,
+                                   subtotal: order_item.subtotal)
       yield display_item
     end
   end
