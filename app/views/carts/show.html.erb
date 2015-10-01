@@ -37,7 +37,7 @@
     </td><td></td><td></td><td></td>
     <td>
       <% if !(cart.empty?) %>
-        <%= link_to "Checkout", orders_path, class: "btn-primary btn cart-checkout-btn" %>
+        <%= link_to "Checkout", new_checkout_path, class: "btn-primary btn cart-checkout-btn" %>
       <% end %>
     </td>
   </tr>

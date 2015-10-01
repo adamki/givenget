@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/about', to: 'welcome#about'
   get '/contact', to: "welcome#contact"
 
+  resources :checkouts, only:[:new]
+
   resources :items, only:[:index, :show], param: :slug
 
   resources :carts, only:[:create]
