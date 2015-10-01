@@ -9,7 +9,7 @@ class CheckoutsController < ApplicationController
   def create
     @address = Address.new(address_params)
     current_user.address = @address
-    @assistance = Assistance.new
+    redirect_to checkouts_confirm_path
   end
 
   private

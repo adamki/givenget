@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/contact', to: "welcome#contact"
 
   resources :checkouts, only:[:new, :create]
+  get '/checkouts/confirm', to: 'checkouts#confirm'
 
   resources :items, only:[:index, :show], param: :slug
 

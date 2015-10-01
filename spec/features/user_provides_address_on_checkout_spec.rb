@@ -25,9 +25,12 @@ feature 'checkout' do
     expect(page).to have_content("You may request financial assistance on next screen")
     click_button("Proceed to Payment")
     expect(current_path).to eq('/checkouts/confirm')
+    address.each_pair do |label, value|
+      expect(page).to have_content(value)
+    end
   end
 
-  
+
 
 
 end

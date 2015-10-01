@@ -1,9 +1,10 @@
 class OrderCreator
   attr_reader :cart, :user
 
-  def initialize(cart, user)
-    @cart = cart
-    @user = user
+  def initialize(args)
+    @cart = args[:cart]
+    @user = args[:user]
+    @will_pay = args[:will_pay]
   end
 
   def generate

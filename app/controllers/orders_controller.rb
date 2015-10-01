@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :verify_logged_in, only:[:index]
 
   def index
-    order_creator = OrderCreator.new(cart, current_user)
+    order_creator = OrderCreator.new(order_params)
     if order_creator.generate
       cart.clear
       flash.notice = "Order placed!"
@@ -23,5 +23,12 @@ class OrdersController < ApplicationController
       session[:redirect] = request.referrer
       redirect_to signin_or_signup_path
     end
+  end
+
+  def order_params
+    byebug
+    {cart: cart,
+      user: current_user,
+      will_pay: params[:will_pay]}
   end
 end
