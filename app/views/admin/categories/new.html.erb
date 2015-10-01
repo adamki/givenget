@@ -1,18 +1,18 @@
-
-<div class="container row well col-sm-6" id="form-pane">
-  <div class="container row well header-well">
+<div class="container outer-cart">
+  <div class="col-md-2"></div>
+    <div class="col-md-8 cart-container">
     <h1>New Category</h1>
-  </div>
 
-  <div class="container spacer">
-  </div>
+    <div class="container spacer">
+    </div>
 
-  <div class="container col-sm-6 row well inner-form">
-  <%= form_for(@category, url: admin_categories_path) do |f| %>
-    <%= f.label :title, 'Category:' %><br>
-    <%= f.text_field :title, {class: 'question-box'} %><br>
+    <%= form_for(@category, url: admin_categories_path) do |f| %>
+      <div class="field-spacer">
+        <%= f.label :title, 'Category:'%>
+      </div>
+      <%= f.text_field :title, {class: 'question-box'} %><br>
 
-    <%= f.submit 'Create Category', {class: 'btn btn-primary btn-large btn-submit'} %>
-  <% end %>
+      <%= f.submit 'Create Category', {class: 'btn-right'} %>
+    <% end %>
   </div>
 </div>

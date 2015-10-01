@@ -239,6 +239,7 @@ img.envelope{
       background-color: #6FB893;
       border-color: #F4EDD6;
       border-radius: 10px;
+      margin-bottom: 20px;
   }
 
   .btn-space {
@@ -408,13 +409,35 @@ img.envelope{
 
 .checkout-1-pymt-msg {
   margin-bottom: 30px;
-  }
+}
+
 /***********************
 * Admin Orders
 ************************/
+
 .ord-status-btn{
   margin-right: 8px;
 }
+
+.field-spacer {
+  width: 10%;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.table-hover:hover {
+  background-color: #BED7C1;
+}
+
+#admin-button{
+  border: 1px #6FB893 solid;
+  border-radius: 3px;
+  padding: 5px;
+  margin:0px 10px;
+}
+
+.spacer-big{
+  height: 50px;
 
 /***********************
 *Sessions and Dashboard

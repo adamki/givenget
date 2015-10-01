@@ -1,18 +1,40 @@
-<%= form_for @item, url: admin_items_path do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<div class="container outer-cart">
+  <div class="col-md-2"></div>
+    <div class="col-md-8 cart-container">
+      <h1>New Item</h1>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+      <div class="container spacer"></div>
+      <%= form_for @item, url: admin_items_path do |f| %>
+        <div class="field-spacer">
+          <%= f.label :title %>
+        </div>
+        <%= f.text_field :title %><br>
 
-  <%= f.label :price %>
-  <%= f.text_field :price%>
+        <div class="field-spacer">
+          <%= f.label :description %>
+        </div>
+        <%= f.text_field :description %><br>
 
-  <%= f.label :category %>
-  <%= f.collection_select :categories, @categories, :id, :title ,{:multiple => true}%>
+        <div class="field-spacer">
+          <%= f.label :price %>
+        </div>
+        <%= f.text_field :price%><br>
 
-  <%= f.label :picture %>
-  <%= f.file_field :picture%>
+        <div class="field-spacer">
+          <%= f.label :category %>
+        </div>
 
-  <%= f.submit %>
-<% end %>
+        <div class="field-spacer">
+          <%= f.collection_select :categories, @categories,
+                                  :id, :title ,{:multiple => true}%>
+        </div><br>
+
+        <%= f.label :picture %>
+        <%= f.file_field :picture%><br>
+
+        <%= f.submit 'Create Item', {class: "btn-right"} %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
