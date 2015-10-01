@@ -3,7 +3,7 @@
 <table class="table">
   <tr>
     <th>Category</th>
-    <th>Delete</th>
+    <th>Options</th>
     <th>Items</th>
   </tr>
   <% @categories.each do |c| %>
@@ -12,9 +12,12 @@
       <%= link_to c.title, category_path(c.slug), class: "lead-column" %>
     </td>
     <td>
+      <%= link_to edit_admin_category_path(c), class: "btn btn-danger" do %>
+        Edit
+      <% end %>
       <%= link_to admin_category_path(c), method: :delete, class: "btn btn-danger" do %>
-          Delete
-        <% end %>
+        Delete
+      <% end %>
     </td>
     <td>
       <% c.items.each do |item| %>

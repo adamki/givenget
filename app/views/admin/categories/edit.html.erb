@@ -1,0 +1,17 @@
+<div class="container row well col-sm-6" id="form-pane">
+  <div class="container row well header-well">
+    <h1>Update Category</h1>
+  </div>
+
+  <div class="container spacer">
+  </div>
+
+  <div class="container col-sm-6 row well inner-form">
+  <%= form_for(@category, url: admin_category_path) do |f| %>
+    <%= f.label :title, 'Category:' %><br>
+    <%= f.text_field :title, {class: 'question-box'} %><br>
+
+    <%= f.submit 'Update Category', {class: 'btn btn-primary btn-large btn-submit'} %>
+  <% end %>
+  </div>
+</div>

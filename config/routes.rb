@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/contact', to: "welcome#contact"
 
   resources :gives, only:[:new, :create]
+  resources :checkouts, only:[:new, :create]
+  get '/checkouts/confirm', to: 'checkouts#confirm'
 
   resources :items, only:[:index, :show], param: :slug
 
@@ -35,7 +37,12 @@ Rails.application.routes.draw do
   delete '/content/:id', to: 'content#destroy', as: 'delete_content'
 
   namespace :admin do
-    resources :categories, only: [:index, :destroy, :new, :create]
+    #** do not move below resources :orders **
+    get '/orders/completed', to: 'orders#completed'
+    get '/orders/cancelled', to: 'orders#cancelled'
+    get '/orders/ordered', to: 'orders#ordered'
+    get '/orders/paid', to: 'orders#paid'
+    resources :categories, only: [:index, :destroy, :new, :create, :edit, :update]
     resources :items, only: [:index, :destroy, :new, :create, :update, :edit]
     resources :orders, only: [:index, :edit, :update, :show]
     get '/dashboard', to: 'sessions#show'

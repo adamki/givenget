@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 20151001024200) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "addresses", force: :cascade do |t|
+    t.string  "full_name"
+    t.string  "street1"
+    t.string  "street2"
+    t.string  "city"
+    t.string  "state"
+    t.string  "zip"
+    t.integer "user_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.string "slug"
@@ -92,6 +102,7 @@ ActiveRecord::Schema.define(version: 20151001024200) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.string   "status"
+    t.string   "will_pay"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
