@@ -7,6 +7,10 @@ class OrderCreator
     @will_pay = args[:will_pay].gsub('$', '')
   end
 
+  def normalize_will_pay
+    
+  end
+
   def generate
     order_params = {user: self.user, status: "Ordered", will_pay: @will_pay}
     self.cart.each_with_object(Order.create(order_params)) do |item, order|

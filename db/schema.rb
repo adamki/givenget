@@ -60,11 +60,11 @@ ActiveRecord::Schema.define(version: 20151001020328) do
     t.integer  "price"
     t.string   "image"
     t.boolean  "visible",              default: true
+    t.string   "slug"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.string   "slug"
   end
 
   add_index "items", ["slug"], name: "index_items_on_slug", using: :btree
