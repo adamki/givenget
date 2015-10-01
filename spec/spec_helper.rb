@@ -71,6 +71,16 @@ RSpec.configure do |config|
       visit '/cart'
     end
 
+    def address
+    OpenStruct.new(full_name: "Abraham Lincoln",
+      add_1: "123 Main St.",
+      add_2: "Unit 7",
+      city: "Springfield",
+      state: "IL",
+      zip: "12345"
+    )
+    end
+
     def create_order
       visit '/signin_or_signup'
       click_link_or_button("twitter-link")
@@ -79,6 +89,12 @@ RSpec.configure do |config|
       click_link_or_button("Add to Cart")
       visit '/cart'
       click_link_or_button("Checkout")
+      fill_in 'Full Name', with: address.full_name
+      fill_in 'Address First Line', with: address.add_1
+      fill_in 'Address Second Line', with: address.add_2
+      fill_in 'City', with: address.city
+      fill_in 'State', with: address.state
+      fill_in 'Zip', with: address.zip
       click_link_or_button("Proceed to Payment")
       click_link_or_button("Place Order")
     end
