@@ -18,11 +18,23 @@
           <td><%= display_item.item.description %></td>
           <td><%= dollar_string(display_item.price) %></td>
           <td><%= display_item.quantity %></td>
+          <td><%= dollar_string(display_item.subtotal) %></td>
         </tr>
       <% end %>
       <tr>
-        <td></td><td></td><td></td><td></td>
-        <td><%= dollar_string(order.total) %></td>
+        <td></td><td></td><td></td>
+        <td><h4 class="text-right">Total:</h4></td>
+        <td><h4><%= dollar_string(order.total) %></h4></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td>
+        <td><h4 class="text-right">Proposed to Pay:</h4></td>
+        <td><h4><%= dollar_string(order.total) %></h4></td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td>
+        <td><h4 class="text-right">Donated:</h4></td>
+        <td><h4><%= "$0.00" %></h4></td>
       </tr>
     </table>
 

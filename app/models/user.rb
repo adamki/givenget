@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :orders
+  has_one :address
   validates :uid, :name, :provider, presence: true
   validates :uid, uniqueness: true
 
