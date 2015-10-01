@@ -12,7 +12,10 @@
     </div>
     <div class="col-md-4"></div>
   </div>
-  <%= link_to("Admin Categories", admin_categories_path) %>
-  <%= link_to("Admin Items", admin_items_path) %>
-  <%= link_to("Admin Orders", admin_orders_path) %>
+  <div class="col-md-12 spacer-big"></div>
+  <div class="col-md-12 text-center">
+    <%= link_to("Admin Categories", admin_categories_path,class:"btn-left", id: "admin-button") %>
+    <%= link_to("Admin Items", admin_items_path,class:"btn-left", id: "admin-button") %>
+    <%= link_to("Admin Orders", admin_orders_path, class:"btn-left", id: "admin-button") %>
+  </div>
 </div>
