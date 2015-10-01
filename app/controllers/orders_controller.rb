@@ -16,13 +16,6 @@ class OrdersController < ApplicationController
   end
 
   private
-  def verify_logged_in
-    if !current_user
-      session[:redirect] = request.referrer
-      flash.notice = "Please Sign In To Complete Your Order"
-      redirect_to signin_or_signup_path
-    end
-  end
 
   def order_params
     {cart: cart,
