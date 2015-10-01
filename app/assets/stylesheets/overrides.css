@@ -284,4 +284,10 @@ img.envelope{
 .checkout-1-pymt-msg {
   margin-bottom: 30px;
   }
+/***********************
+* Admin Orders
+************************/
+.ord-status-btn{
+  margin-right: 8px;
+}
 

@@ -4,11 +4,14 @@ class OrderCreator
   def initialize(args)
     @cart = args[:cart]
     @user = args[:user]
-    @will_pay = args[:will_pay].gsub('$', '')
+    @will_pay = normalize_will_pay(args[:will_pay])
   end
 
-  def normalize_will_pay
-    
+  def normalize_will_pay(raw)
+    pay_string = raw.gsub('$', '')
+    pay_string = pay_string.gsub(' ', '')
+    pay_float = (pay_string.to_f * 100).to_i
+    pay_float.to_i
   end
 
   def generate
