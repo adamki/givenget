@@ -1,4 +1,4 @@
-</div class="main-text">
+</div class="main-text text-center">
   <%= form_for @give do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -6,9 +6,11 @@
     <%= f.text_field :description %>
     <%= f.label :price %>
     <%= f.text_field :price %>
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %>
     <%= f.label :picture %>
     <%= f.file_field :picture%>
 
-    <%= f.submit %>
+    <%= f.submit("Submit Donation") %>
   <% end %>
 </div>
