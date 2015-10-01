@@ -5,7 +5,12 @@ class Admin::OrdersController < AdminController
   end
 
   def by_status
-    @orders = Order.by_status(params[:status])
+    status = params[:status].capitalize
+    if Order.legal_status.include?(status)
+      @orders = Order.by_status(status)
+    else
+      render_404("Bad status code")
+    end
   end
 
   def show
