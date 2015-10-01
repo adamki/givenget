@@ -3,7 +3,11 @@
 <div class="col-md-8 cart-container">
   <br>
   <h1 class="cart-header">Order <%= @order.id %> - <%= to_short(@order.created_at) %></h1>
-  <h3>Order Status: <%= @order.status %></h3>
+  <% if (@order.status == "Completed" || @order.status == "Cancelled") %>
+    <h3>Order <%= @order.status %> on <%= to_short(@order.updated_at) %></h3>
+  <% else %>
+    <h3>Order Status: <%= @order.status %></h3>
+  <% end %>
   <br>
 <table class="table">
   <tr>
