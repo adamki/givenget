@@ -17,17 +17,6 @@ require 'rails_helper'
       expect(page).to have_content("bicycle")
     end
 
-    xit 'can delete an existing item' do
-      login_admin!
-      visit admin_items_path
-      expect(page).to have_content("Test Item")
-      click_link "Test Item"
-      expect(current_path).to eq(item_path(test_item.slug))
-      click_link "Delete"
-      expect(current_path).to eq(admin_items_path)
-      expect(page).not_to have_content("Test Item")
-    end
-
     it 'can edit an existing item' do
       login_admin!
       visit admin_items_path
