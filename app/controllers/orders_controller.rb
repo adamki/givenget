@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-
   def index
     order_creator = OrderCreator.new(order_params)
     if order_creator.generate
