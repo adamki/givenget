@@ -32,7 +32,8 @@
   <% @items.each do |item| %>
     <div class="col-sm-4 col-lg-4 col-md-4" id='<%= item.title %>'>
       <div class="thumbnail">
-        <%= image_tag item.picture.url(:large), class: "img-responsive" %>
+        <img src="<%= item.image %>", class="img-responsive", id="item-view-preview"alt="", width="200, height= "200">
+        <%#= image_tag item.picture.url(:large), class: "img-responsive", id: "item-view-preview"%>
         <div class="caption">
           <h4 class="pull-right">
             <%= dollar_string(item.price) %>

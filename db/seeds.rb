@@ -15,20 +15,19 @@ category_set = [*1..20].each.with_object([]) do |item, cat_set|
 end
 
 items = Item.create([{title: 'pencil', description: 'bulk pencils', price: 1020, image: 'http://globe-views.com/dcim/dreams/pencil/pencil-01.jpg', categories: Category.all.sample(5)},
-                     {title: 'haircut', description: 'the most stylish', price: 1599, image: 'https://haircuts.com', categories: Category.all.sample(5)},
-                     {title: 'junk', description: 'some junk', price: 2099, image: 'https://junk.com', categories: Category.all.sample(5)},
-                     {title: 'internet', description: 'not worth the price', price: 6016, image: 'https://internet.com', categories: Category.all.sample(5)},
-                     {title: 'dog', description: 'bark', price: 0010, image: 'https://dogs.com', categories: Category.all.sample(5)},
-                     {title: 'tree', description: 'also bark', price: 2399, image: 'https://trees.com', categories: Category.all.sample(5)},
-                     {title: 'swimming lessons', description: 'just don\'t drown', price: 799, image: 'https://swimming-lessons.com', categories: Category.all.sample(5)},
-                     {title: 'real movies', description: 'nah, its the real thing', price: 1999, image: 'https://bootleg-movies-with-a-slightly-wrong-title.com', categories: Category.all.sample(5)},
-                     {title: 'gum wrapper', description: 'the worst part of a stick of gum', price: 9999, image: 'https://gum-wrapper.com', categories: Category.all.sample(5)},
-                     {title: 'stuff', description: 'stuff', price: 2799, image: 'https://stuff.com', categories: Category.all.sample(5)},
-                     {title: 'cat', description: 'the internet likes these for some reason', price: 1, image: 'https://cats.com', categories: Category.all.sample(5)},
-                     {title: 'wet cardboard', description: 'just useless enough to be on the internet', price: 1337, image: 'https://wet-cardboard.com', categories: Category.all.sample(5)},
-                     {title: 'sleep', description: 'what I should be doing right now', price: 9999, image: 'https://sleep.com', categories: Category.all.sample(5)},
-                     {title: 'broken fork', description: 'its only kinda broken', price: 2000, image: 'https://broken-fork.com', categories: Category.all.sample(5)},
-                     {title: 'crate', description: 'put some stuff in them', price: 1279, image: 'https://crates.com', categories: Category.all.sample(5)}])
+                     {title: 'haircut', description: 'the most stylish', price: 1599, image: 'http://i.imgur.com/O9vhcWK.jpg', categories: Category.all.sample(5)},
+                     {title: 'junk', description: 'some junk', price: 2099, image: 'http://i.imgur.com/xGA7FqN.jpg?1', categories: Category.all.sample(5)},
+                     {title: 'internet', description: 'not worth the price', price: 6016, image: 'http://i.imgur.com/thpZjxj.jpg', categories: Category.all.sample(5)},
+                     {title: 'dog', description: 'bark', price: 0010, image: 'http://i.imgur.com/MU2dD8E.jpg', categories: Category.all.sample(5)},
+                     {title: 'tree', description: 'also bark', price: 2399, image: 'http://i.imgur.com/zSMlhaL.jpg', categories: Category.all.sample(5)},
+                     {title: 'swimming lessons', description: 'just don\'t drown', price: 799, image: 'http://i.imgur.com/dBKJup1.jpg', categories: Category.all.sample(5)},
+                     {title: 'real movies', description: 'nah, its the real thing', price: 1999, image: 'http://i.imgur.com/a5MK3cu.jpg', categories: Category.all.sample(5)},
+                     {title: 'gum wrapper', description: 'the worst part of a stick of gum', price: 9999, image: 'http://i.imgur.com/YX6Ailv.jpg', categories: Category.all.sample(5)},
+                     {title: 'cat', description: 'the internet likes these for some reason', price: 1, image: 'http://i.imgur.com/0LINzxs.jpg', categories: Category.all.sample(5)},
+                     {title: 'wet cardboard', description: 'just useless enough to be on the internet', price: 1337, image: 'http://i.imgur.com/C8SukFQ.jpg', categories: Category.all.sample(5)},
+                     {title: 'sleep', description: 'what I should be doing right now', price: 9999, image: 'http://i.imgur.com/LBfAioO.jpg', categories: Category.all.sample(5)},
+                     {title: 'broken fork', description: 'its only kinda broken', price: 2000, image: 'http://i.imgur.com/3YljSmE.jpg', categories: Category.all.sample(5)},
+                     {title: 'crate', description: 'put some stuff in them', price: 1279, image: 'http://i.imgur.com/oZyFzT2.jpg', categories: Category.all.sample(5)}])
 
 content = Content.create([
        {name: "Butter",
