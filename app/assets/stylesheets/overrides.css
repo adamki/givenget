@@ -231,9 +231,39 @@ img.envelope{
 #admin-item-btn-2 {
   margin-top: -35px;
   height: 35px;
-
 }
 
 .visible-check {
+  margin-bottom: 10px;
+}
+
+/************************
+* Checkout
+************************/
+#full-name-field{
+  width: 100%;
+}
+#address-1-field{
+  width: 100%;
+}
+#address-2-field{
+  width: 100%;
+}
+#city-field{
+  width: 30%;
+}
+#state-field{
+  width: 10%;
+}
+#zip-field{
+  width: 25%;
+}
+
+.checkout-actions{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.checkout-button{
+  margin-top: 10px;
   margin-bottom: 10px;
 }
