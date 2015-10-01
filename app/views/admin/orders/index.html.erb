@@ -12,15 +12,13 @@
   </tr>
   <tr>
     <% @counts.each do |status, count| %>
-      <th><%= link_to count, "/admin/orders/#{status.downcase}", class: "btn btn-primary btn-sm" %></th>
+      <th><%= link_to count, "/admin/orders/by_status/#{status.downcase}", class: "btn btn-primary btn-sm" %></th>
     <% end %>
   </tr>
 </table>
 </div>
 </div>
 <div class="col-md-2"></div>
-
-
 <div class="container outer-cart">
 <div class="col-md-2"></div>
 <div class="col-md-8 cart-container">
@@ -53,12 +51,9 @@
       </td>
     </tr>
   <% end %>
-
 </table>
 </div>
 </div>
-
-
 <div class="col-md-2"></div>
 
 

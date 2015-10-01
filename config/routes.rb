@@ -38,10 +38,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     #** do not move below resources :orders **
-    get '/orders/completed', to: 'orders#completed'
-    get '/orders/cancelled', to: 'orders#cancelled'
-    get '/orders/ordered', to: 'orders#ordered'
-    get '/orders/paid', to: 'orders#paid'
+    get '/orders/by_status/:status', to: 'orders#by_status'
     resources :categories, only: [:index, :destroy, :new, :create, :edit, :update]
     resources :items, only: [:index, :destroy, :new, :create, :update, :edit]
     resources :orders, only: [:index, :edit, :update, :show]
