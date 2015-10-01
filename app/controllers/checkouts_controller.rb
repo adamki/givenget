@@ -1,4 +1,6 @@
 class CheckoutsController < ApplicationController
+  before_action :verify_logged_in, only:[:new]
+
   def new
     @address = Address.new
   end
@@ -21,6 +23,13 @@ class CheckoutsController < ApplicationController
       state: params["state"],
       zip: params["zip"]
     }
+  end
+
+  def verify_logged_in
+    if !current_user
+      session[:redirect] = request.referrer
+      redirect_to signin_or_signup_path
+    end
   end
 
 end

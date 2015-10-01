@@ -4,11 +4,11 @@ class OrderCreator
   def initialize(args)
     @cart = args[:cart]
     @user = args[:user]
-    @will_pay = args[:will_pay]
+    @will_pay = args[:will_pay].gsub('$', '')
   end
 
   def generate
-    order_params = {user: self.user, status: "Ordered"}
+    order_params = {user: self.user, status: "Ordered", will_pay: @will_pay}
     self.cart.each_with_object(Order.create(order_params)) do |item, order|
       OrderItem.create(order_item_params(item, order))
     end

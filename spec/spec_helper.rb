@@ -79,6 +79,8 @@ RSpec.configure do |config|
       click_link_or_button("Add to Cart")
       visit '/cart'
       click_link_or_button("Checkout")
+      click_link_or_button("Proceed to Payment")
+      click_link_or_button("Place Order")
     end
 
   # rspec-expectations config goes here. You can use an alternate
