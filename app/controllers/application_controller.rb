@@ -40,4 +40,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def render_404(msg = "Page not found")
+    flash[:error] = msg
+    redirect_to error_path status: 404
+    # raise ActionController::RoutingError.new('
+  end
+
 end
