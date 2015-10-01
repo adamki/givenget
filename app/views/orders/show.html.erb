@@ -1,12 +1,13 @@
 <div class="container outer-cart">
-<div class="col-md-3"></div>
-<div class="col-md-6 cart-container">
+<div class="col-md-2"></div>
+<div class="col-md-8 cart-container">
   <br>
-  <h1 class="cart-header">Order <%= @order.id %></h1>
+  <h1 class="cart-header">Order <%= @order.id %> - <%= to_short(@order.created_at) %></h1>
+  <h3>Order Status: <%= @order.status %></h3>
   <br>
 <table class="table">
   <tr>
-    <th>Title</th>
+    <th>Item</th>
     <th>Brief Description</th>
     <th>Price</th>
     <th>Quantity</th>
@@ -23,8 +24,13 @@
       <td><%= dollar_string(order_item.subtotal) %></td>
     </tr>
   <% end %>
+  <tr>
+    <td></td><td></td><td></td>
+    <td class="text-right">Total:</td>
+    <td><%= dollar_string(@order.total) %></td>
+  </tr>
 </table>
 
-<div class="col-md-3"></div>
+<div class="col-md-2"></div>
 </div>
 </div>

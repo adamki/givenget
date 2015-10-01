@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all
+    @items = Item.visible
     @categories = Category.all
   end
 
